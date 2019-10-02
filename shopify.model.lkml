@@ -30,6 +30,16 @@ explore: orders {
     relationship: many_to_one
   }
 
+  join: collect {
+    sql_on: ${collect.product_id} = ${product.id} ;;
+    relationship: many_to_one
+  }
+
+  join: collection {
+    sql_on: ${collection.id} = ${collect.collection_id} ;;
+    relationship: many_to_one
+  }
+
 
 
 
