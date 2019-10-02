@@ -58,8 +58,8 @@
     explore: orders
     type: single_value
     fields:
-    - orders.reporting_period
-    - orders__line_items.count
+    - order.created.quater
+    - order_line.count
     sorts:
     - orders__line_items.count desc
     limit: 500
