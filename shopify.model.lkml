@@ -23,6 +23,7 @@ explore: orders {
 
   join: location {
     sql_on: ${location.id} = ${order.location_id} ;;
+    relationship: many_to_one
   }
 
   # PRODUCT
@@ -57,7 +58,7 @@ explore: orders {
     relationship: many_to_one
   }
 
-  join:  {}
+#   join:  {}
 
 
 
