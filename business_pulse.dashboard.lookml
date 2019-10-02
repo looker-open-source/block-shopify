@@ -5,11 +5,11 @@
   - title: Untitled
     name: Untitled
     model: shopify
-    explore: order
+    explore: orders
     type: single_value
     fields:
-    - orders.avg_price
-    - orders.created_date
+    - order.avg_price
+    - order.created_date
     fill_fields:
     - orders.created_date
     sorts:
