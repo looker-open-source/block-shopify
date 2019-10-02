@@ -298,8 +298,8 @@ view: order {
 
   dimension: shipping_location {
     type: location
-    sql_longitude: ${TABLE}.shipping_address_longitude ;;
-    sql_latitude: ${TABLE}.shipping_address_latitude ;;
+    sql_longitude: ${shipping_address_longitude} ;;
+    sql_latitude: ${shipping_address_latitude} ;;
   }
 
   dimension: shipping_address_name {
@@ -399,6 +399,12 @@ view: order {
   measure: total_revenue {
     type: sum
     sql: ${total_price} ;;
+    drill_fields: [detail*]
+  }
+
+  measure: new_customers {
+    type: sum
+    sql: COUNT(${customer_id}) = 1 ;;
     drill_fields: [detail*]
   }
 
