@@ -9,8 +9,14 @@ include: "views/*.view.lkml"
 explore: orders {
 
   view_name: "order"
+
   join: order_line {
     sql_on: ${order_line.order_id} = ${order.id};;
+    relationship: one_to_one
+  }
+
+  join: order_tag {
+    sql_on:  ${order_tag.order_id} = ${order.id};;
     relationship: one_to_one
   }
 #   join: customers {
