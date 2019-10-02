@@ -10,6 +10,7 @@ explore: orders {
 
   view_name: "order"
 
+  # ORDER
   join: order_line {
     sql_on: ${order_line.order_id} = ${order.id};;
     relationship: one_to_many
@@ -20,14 +21,14 @@ explore: orders {
     relationship: many_to_one
   }
 
+  join: location {
+    sql_on: ${location.id} = ${order.location_id} ;;
+  }
+
+  # PRODUCT
   join: product {
     sql_on: ${product.id} = ${order_line.product_id} ;;
     relationship: one_to_one
-  }
-
-  join: customer {
-    sql_on: ${customer.id} = ${order.customer_id} ;;
-    relationship: many_to_one
   }
 
   join: collect {
@@ -39,6 +40,25 @@ explore: orders {
     sql_on: ${collection.id} = ${collect.collection_id} ;;
     relationship: many_to_one
   }
+
+  # CUSTOMER
+  join: customer {
+    sql_on: ${customer.id} = ${order.customer_id} ;;
+    relationship: many_to_one
+  }
+
+  join: customer_address {
+    sql_on: ${customer_address.customer_id} = ${customer.id} ;;
+    relationship: many_to_one
+  }
+
+  join: customer_tag {
+    sql_on: ${customer_tag.customer_id} = ${customer.id} ;;
+    relationship: many_to_one
+  }
+
+  join:  {}
+
 
 
 
