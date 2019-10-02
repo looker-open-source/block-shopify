@@ -42,6 +42,21 @@ explore: orders {
     relationship: many_to_one
   }
 
+  join: product_option {
+    sql_on: ${product_option.product_id} = ${product.id} ;;
+    relationship: many_to_one
+  }
+
+  join: product_tag {
+    sql_on: ${product_tag.product_id} = ${product.id} ;;
+    relationship: many_to_one
+  }
+
+  join: product_variant {
+    sql_on: ${product_variant.product_id} = ${product.id} ;;
+    relationship: many_to_one
+  }
+
   # CUSTOMER
   join: customer {
     sql_on: ${customer.id} = ${order.customer_id} ;;
@@ -57,26 +72,6 @@ explore: orders {
     sql_on: ${customer_tag.customer_id} = ${customer.id} ;;
     relationship: many_to_one
   }
-
-#   join:  {}
-
-
-
-
-
-#   join: customers {
-#     sql_on: ${customers.id} = ${orders.customer_id} ;;
-#     type: left_outer
-#     relationship: many_to_one
-#   }
-#
-#   join: customer_order_facts {
-#     view_label: "Customers"
-#     sql_on: ${customers._id} = ${customer_order_facts.customer_id} ;;
-#     type: left_outer
-#     relationship: many_to_one
-#   }
-
 
 }
 
