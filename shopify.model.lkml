@@ -12,7 +12,7 @@ explore: orders {
 
   join: order_line {
     sql_on: ${order_line.order_id} = ${order.id};;
-    relationship: one_to_one
+    relationship: one_to_many
   }
 
   join: order_tag {
