@@ -113,18 +113,18 @@
     type: looker_area
     fields:
     - order_line.count
-    - product_tag.name
+    - product_tag.value
     - order.created_date
     pivots:
-    - product_tag.name
+    - product_tag.value
     fill_fields:
     - order.created_date
     filters:
-      products.product_type: "%toys%,%disney%,%lego%"
+      product_tag.value: "%toys%,%disney%,%lego%"
       orders.created_year: '2019'
     sorts:
     - orders_line.count desc 0
-    - product_tag.name
+    - product_tag.value
     limit: 500
     column_limit: 50
     # query_timezone: America/New_York

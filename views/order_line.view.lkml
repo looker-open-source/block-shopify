@@ -119,6 +119,12 @@ view: order_line {
     drill_fields: [detail*]
   }
 
+  measure: avg_cost {
+    type: average
+    sql: AVG(${price}) ;;
+    drill_fields: [detail*]
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
