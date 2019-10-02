@@ -17,7 +17,7 @@ explore: orders {
 
   join: order_tag {
     sql_on:  ${order_tag.order_id} = ${order.id};;
-    relationship: one_to_one
+    relationship: many_to_one
   }
 #   join: customers {
 #     sql_on: ${customers.id} = ${orders.customer_id} ;;
