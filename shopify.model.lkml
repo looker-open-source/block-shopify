@@ -4,7 +4,7 @@ connection: "looker_app"
 include: "views/*.view.lkml"
 
 # include all the dashboards
-# include: "dashboards/*.dashboard"
+include: "*.dashboard"
 
 explore: orders {
 
