@@ -296,6 +296,12 @@ view: order {
     sql: ${TABLE}.shipping_address_longitude ;;
   }
 
+  dimension: shipping_location {
+    type: location
+    sql_longitude: ${TABLE}.shipping_address_longitude ;;
+    sql_latitude: ${TABLE}.shipping_address_latitude ;;
+  }
+
   dimension: shipping_address_name {
     type: string
     sql: ${TABLE}.shipping_address_name ;;
@@ -387,6 +393,12 @@ view: order {
 
   measure: count {
     type: count
+    drill_fields: [detail*]
+  }
+
+  measure: total_revenue {
+    type: sum
+    sql: ${total_price} ;;
     drill_fields: [detail*]
   }
 

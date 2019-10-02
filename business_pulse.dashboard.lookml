@@ -178,7 +178,7 @@
     fields:
     - order.created_year
     - order.created_month_num
-    - order.total_price
+    - order.total_revenue
     pivots:
     - order.created_year
     fill_fields:
@@ -232,18 +232,18 @@
       series:
       - id: '2015'
         name: '2015'
-        axisId: order.total_order
+        axisId: order.total_revenue
       - id: '2016'
         name: '2016'
-        axisId: order.total_order
+        axisId: order.total_revenue
       - id: '2017'
         name: '2017'
-        axisId: order.total_order
+        axisId: order.total_revenue
     colors:
     - 'palette: Tomato to Steel Blue'
     series_colors:
-      2016 - orders.total_order_revenue: "#8E687E"
-      2017 - orders.total_order_revenue: "#4D6C97"
+      2016 - order.total_revenue: "#8E687E"
+      2017 - order.total_revenue: "#4D6C97"
     row: 3
     col: 13
     width: 11
@@ -254,12 +254,12 @@
     explore: orders
     type: looker_map
     fields:
-    - orders.shipping_location
-    - orders.total_order_revenue
+    - order.shipping_location
+    - order.total_revenue
     sorts:
-    - orders.total_order_revenue desc
+    - order.total_revenue desc
     limit: 500
-    query_timezone: America/New_York
+    # query_timezone: America/New_York
     map_plot_mode: points
     heatmap_gridlines: false
     heatmap_gridlines_empty: false
