@@ -8,7 +8,7 @@
     explore: orders
     type: single_value
     fields:
-    - order.avg_price
+    - order_line.avg_price
     - order.created_date
     fill_fields:
     - orders.created_date
@@ -176,17 +176,17 @@
     explore: orders
     type: looker_line
     fields:
-    - orders.created_year
-    - orders.created_month_num
-    - orders.total_order_revenue
+    - order.created_year
+    - order.created_month_num
+    - order.total_price
     pivots:
-    - orders.created_year
+    - order.created_year
     fill_fields:
-    - orders.created_year
-    - orders.created_month_num
+    - order.created_year
+    - order.created_month_num
     sorts:
-    - orders.created_year
-    - orders.created_month_num
+    - order.created_year
+    - order.created_month_num
     limit: 500
     stacking: ''
     show_value_labels: false
@@ -232,13 +232,13 @@
       series:
       - id: '2015'
         name: '2015'
-        axisId: orders.total_order
+        axisId: order.total_order
       - id: '2016'
         name: '2016'
-        axisId: orders.total_order
+        axisId: order.total_order
       - id: '2017'
         name: '2017'
-        axisId: orders.total_order
+        axisId: order.total_order
     colors:
     - 'palette: Tomato to Steel Blue'
     series_colors:

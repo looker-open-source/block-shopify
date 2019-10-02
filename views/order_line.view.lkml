@@ -119,10 +119,11 @@ view: order_line {
     drill_fields: [detail*]
   }
 
-  measure: avg_cost {
+  measure: avg_price {
     type: average
-    sql: AVG(${price}) ;;
-    drill_fields: [detail*]
+    sql: ${price} ;;
+    value_format_name: usd
+    drill_fields: [order_line.title, order_line.price]
   }
 
   # ----- Sets of fields for drilling ------
