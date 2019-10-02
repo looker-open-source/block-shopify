@@ -96,8 +96,8 @@
     show_silhouette: false
     totals_color: "#808080"
     series_types: {}
-    single_value_title: Orders This Year
-    comparison_label: vs Same Period Last Year
+    single_value_title: Orders This Quarter
+    # comparison_label: vs Same Period Last Year
     # note_state: collapsed
     # note_display: below
     # note_text: There is no current 2018 data for the reporting period hence the vs
@@ -112,22 +112,22 @@
     explore: orders
     type: looker_area
     fields:
-    - orders__line_items.count
-    - products.product_type
-    - orders.created_date
+    - order_line.count
+    - product_tag.name
+    - order.created_date
     pivots:
-    - products.product_type
+    - product_tag.name
     fill_fields:
-    - orders.created_date
+    - order.created_date
     filters:
-      products.product_type: "%Sneakers%,%Apparel%,%Choozepack%,%Sandals%,%Loafers%,%Slip-Ons%"
-      orders.created_year: '2016'
+      products.product_type: "%toys%,%disney%,%lego%"
+      orders.created_year: '2019'
     sorts:
-    - orders__line_items.count desc 0
-    - products.product_type
+    - orders_line.count desc 0
+    - product_tag.name
     limit: 500
     column_limit: 50
-    query_timezone: America/New_York
+    # query_timezone: America/New_York
     stacking: normal
     show_value_labels: false
     label_density: 25
