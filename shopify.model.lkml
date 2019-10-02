@@ -16,9 +16,23 @@ explore: orders {
   }
 
   join: order_tag {
-    sql_on:  ${order_tag.order_id} = ${order.id};;
+    sql_on: ${order_tag.order_id} = ${order.id};;
     relationship: many_to_one
   }
+
+  join: product {
+    sql_on: ${product.id} = ${order_line.product_id} ;;
+    relationship: one_to_one
+  }
+
+  join: customer {
+    sql_on: ${customer.id} = ${order.customer_id} ;;
+    relationship: many_to_one
+  }
+
+
+
+
 #   join: customers {
 #     sql_on: ${customers.id} = ${orders.customer_id} ;;
 #     type: left_outer
