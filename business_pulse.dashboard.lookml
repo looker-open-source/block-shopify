@@ -61,9 +61,9 @@
     - order.created.quater
     - order_line.count
     sorts:
-    - orders__line_items.count desc
+    - order_line.count desc
     limit: 500
-    query_timezone: America/New_York
+    # query_timezone: America/New_York
     custom_color_enabled: false
     custom_color: forestgreen
     show_single_value_title: true
@@ -98,10 +98,10 @@
     series_types: {}
     single_value_title: Orders This Year
     comparison_label: vs Same Period Last Year
-    note_state: collapsed
-    note_display: below
-    note_text: There is no current 2018 data for the reporting period hence the vs
-      same period last year is NULL
+    # note_state: collapsed
+    # note_display: below
+    # note_text: There is no current 2018 data for the reporting period hence the vs
+    #   same period last year is NULL
     row: 0
     col: 8
     width: 8
