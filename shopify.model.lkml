@@ -10,7 +10,7 @@ explore: orders {
 
   view_name: "order"
   join: order_line {
-    sql_on: ${order_line.order_id} = ${order.order_number};;
+    sql_on: ${order_line.order_id} = ${order.id};;
     relationship: one_to_one
   }
 #   join: customers {
