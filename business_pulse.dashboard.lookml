@@ -1,14 +1,14 @@
 - dashboard: business_pulse
-  title: Business Pulse
+  title: Shopify Business Pulse
   layout: newspaper
   elements:
   - title: Untitled
     name: Untitled
     model: shopify
-    explore: orders
+    explore: order
     type: single_value
     fields:
-    - orders__line_items.avg_price
+    - orders.avg_price
     - orders.created_date
     fill_fields:
     - orders.created_date
