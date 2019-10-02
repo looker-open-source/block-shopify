@@ -53,7 +53,7 @@ explore: orders {
   }
 
   join: product_variant {
-    sql_on: ${product_variant.product_id} = ${order_line.variant_id} ;;
+    sql_on: ${product_variant.id} = ${order_line.variant_id} ;;
     relationship: many_to_one
   }
 
