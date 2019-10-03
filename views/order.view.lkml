@@ -404,7 +404,7 @@ view: order {
 
   measure: new_customers {
     type: sum
-    sql: COUNT(${customer_id}) = 1 ;;
+    sql: IF(COUNT(${customer_id}) = 1, 1, 0) ;;
     drill_fields: [detail*]
   }
 
