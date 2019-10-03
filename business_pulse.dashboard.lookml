@@ -213,15 +213,15 @@
     model: shopify
     explore: orders
     type: single_value
-    fields: [orders_line.first_purchase_count]
+    fields: [order.new_customers]
     filters:
-      orders.created_date: '2017'
+      order.created_date: '2019'
     sorts: [calculation_1 desc]
     limit: 500
     dynamic_fields: [{table_calculation: calculation_1, label: Calculation 1, expression: '20000',
         value_format: !!null '', value_format_name: decimal_0, _kind_hint: dimension,
         _type_hint: number}]
-    query_timezone: America/New_York
+    # query_timezone: America/New_York
     custom_color_enabled: false
     custom_color: forestgreen
     show_single_value_title: true
