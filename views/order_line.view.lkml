@@ -126,6 +126,13 @@ view: order_line {
     drill_fields: [order_line.title, order_line.price]
   }
 
+  measure: total_lifetime_revenue {
+    type: sum
+    sql: ${price} ;;
+    value_format_name: usd
+    drill_fields: [order_line.title, order_line.price]
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
