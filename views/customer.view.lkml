@@ -107,7 +107,6 @@ view: customer {
 
   measure: count {
     type: count
-    sql: ${id} ;;
     drill_fields: [detail*]
   }
 
