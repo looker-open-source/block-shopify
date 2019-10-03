@@ -402,9 +402,9 @@ view: order {
     drill_fields: [detail*]
   }
 
-  measure: new_customers {
-    type: sum
-    sql: IF(COUNT(${customer_id}) = 1, 1, 0) ;;
+  measure: count_new_customers {
+    type: count_distinct
+    sql: ${customer_id} ;;
     drill_fields: [detail*]
   }
 
