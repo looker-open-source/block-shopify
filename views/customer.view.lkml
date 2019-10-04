@@ -68,7 +68,10 @@ view: customer {
 
   dimension: new_vs_repeat {
     type: string
-    sql: case when ${orders_count} = 1 then 'new' else 'repeat' end ;;
+    sql: case
+         when ${orders_count} = 1 then 'new'
+         when ${orders_count} = 0 then 'new'
+         else 'repeat' end ;;
     group_label: "Other"
   }
 
