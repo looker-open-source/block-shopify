@@ -128,7 +128,6 @@ view: order_line {
 
   measure: count_items {
     type: count
-    sql: ${order_id} ;;
   }
 
   measure: total_lifetime_revenue {
