@@ -126,6 +126,11 @@ view: order_line {
     drill_fields: [order_line.title, order_line.price]
   }
 
+  measure: count_items {
+    type: count
+    sql: ${order_id} ;;
+  }
+
   measure: total_lifetime_revenue {
     type: sum
     sql: ${price} ;;

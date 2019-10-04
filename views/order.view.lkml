@@ -403,17 +403,11 @@ view: order {
     value_format_name: usd
   }
 
-  measure: count_order_items {
-    type: count
-    sql: ${id} = ${order_line.order_id} ;;
-    drill_fields: [detail*]
-  }
-
-  measure: count_new_customers {
-    type: count_distinct
-    sql: ${customer_id} ;;
-    drill_fields: [detail*]
-  }
+#   measure: count_new_customers {
+#     type: count_distinct
+#     sql: ${customer_id} ;;
+#     drill_fields: [detail*]
+#   }
 
   # ----- Sets of fields for drilling ------
   set: detail {

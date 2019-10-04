@@ -221,11 +221,11 @@
     type: single_value
     dimensions: [order.created_month]
     fill_fields: [order.created_month]
-    measures: [sales.order_items, orders.count]
+    measures: [order_line.count_items, order.count]
     dynamic_fields:
     - table_calculation: avg_items
       label: avg_items
-      expression: ${sales.order_items}/${orders.count}
+      expression: ${order_line.count_items}/${order.count}
       value_format:
       value_format_name: decimal_2
     - table_calculation: last_month
@@ -238,7 +238,7 @@
       expression: "(${avg_items} - ${last_month}) / ${last_month}"
       value_format:
       value_format_name: percent_0
-    sorts: [orders.processed_month desc]
+    sorts: [order.created_month desc]
     limit: '500'
     column_limit: '50'
     custom_color_enabled: false
@@ -271,12 +271,12 @@
     show_silhouette: false
     totals_color: "#1C2260"
     series_types: {}
-    hidden_fields: [sales.order_items, orders.count, last_month]
+    hidden_fields: [order_line.count_items, order.count, last_month]
     comparison_label: month-over-month
-    listen:
-      date_range: orders.processed_month
-      shop_name: shops.shop_name
-      new_or_repeat: orders.new_vs_repeat
+#     listen:
+#       date_range: orders.processed_month
+#       shop_name: shops.shop_name
+#       new_or_repeat: orders.new_vs_repeat
 
   - name: avg_order_value
     title: Avg Order Value
@@ -460,30 +460,30 @@
   - name: avg_order_value_over_time
     title: Avg Order Value Over Time
     model: shopify
-    explore: sales
+    explore: orders
     type: looker_line
-    fields: [orders.processed_month, sales.gross_sales_total, orders.count]
-    fill_fields: [orders.processed_month]
-    sorts: [orders.processed_month desc]
+    fields: [order.created_month, order.total_revenue, order.count]
+    fill_fields: [order.created_month]
+    sorts: [order.created_month desc]
     limit: 500
     column_limit: 50
     show_view_names: false
     dynamic_fields:
     - table_calculation: avg_order_value
       label: Avg Order Value
-      expression: "${sales.gross_sales_total}/${orders.count}"
+      expression: "${order.total_revenue}/${order.count}"
       value_format:
       value_format_name: usd
       _kind_hint: measure
       _type_hint: number
     stacking: ''
-    hidden_fields: [orders.count, sales.gross_sales_total]
+    hidden_fields: [order.count, order.total_revenue]
     series_colors:
     avg_order_value: "#1C2260"
-    listen:
-      date_range: orders.processed_month
-      shop_name: shops.shop_name
-      new_or_repeat: orders.new_vs_repeat
+#     listen:
+#       date_range: orders.processed_month
+#       shop_name: shops.shop_name
+#       new_or_repeat: orders.new_vs_repeat
 
   - name: top_products_units
     title: Top Products by Units Sold
