@@ -403,11 +403,12 @@ view: order {
     value_format_name: usd
   }
 
-#   measure: count_new_customers {
-#     type: count_distinct
-#     sql: ${customer_id} ;;
-#     drill_fields: [detail*]
-#   }
+  # specifically to be used with a date dimension
+  measure: count_new_customers {
+    type: count_distinct
+    sql: ${customer_id} ;;
+    drill_fields: [detail*]
+  }
 
   # ----- Sets of fields for drilling ------
   set: detail {
