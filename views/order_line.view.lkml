@@ -123,7 +123,7 @@ view: order_line {
     type: average
     sql: ${price} ;;
     value_format_name: usd
-    drill_fields: [order_line.title, order_line.price]
+    drill_fields: [product.title, order_line.title, order_line.price]
   }
 
   measure: count_items {
@@ -135,7 +135,7 @@ view: order_line {
     type: sum
     sql: ${price} ;;
     value_format_name: usd
-    drill_fields: [order_line.title, order_line.price]
+    drill_fields: [product.title, order_line.title, order_line.price]
   }
 
   # ----- Sets of fields for drilling ------
