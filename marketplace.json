@@ -1,0 +1,42 @@
+{
+  "label": "Shopify Overview",
+  "category_label": "Tools",
+  "branding": {
+    "image_uri": "https://www.stickpng.com/assets/images/58482ec0cef1014c0b5e4a70.png",
+    "tagline": "This Block provides a comprehensive overview of all order, customer, and product data for your Shopify store. It can be used to set up alerts for quarterly reports or KPI tracking."
+  },
+
+  "constants": {
+    "CONNECTION_NAME": {
+      "label": "Connection Name",
+      "value_constraint": "connection"
+    },
+    "SCHEMA_NAME": {
+      "label": "Schema Name"
+    },
+    "AUDIT_LOG_EXPORT_TABLE_NAME": {
+      "label": "Audit Log Export Table Name",
+      "description": "The table name of your BQ Optimization data (typically cloudaudit_googleapis_com_data_access_*)."
+    },
+    "CONFIG_PROJECT_NAME": {
+      "label": "Config Project Name"
+    },
+    "REPORTING_PERIOD": {
+      "label": "Reporting Period"
+    }
+  },
+  "models": [
+    {
+      "name": "shopify",
+      "connection_constant": "CONNECTION_NAME"
+    }
+  ],
+  "auxiliary_projects": [
+    {
+      "git_uri": "git://github.com/looker/block-shopify-config.git",
+      "git_ref": "[INSERT HASH]",
+      "label": "Shopify Overview",
+      "constant_name": "CONFIG_PROJECT_NAME"
+    }
+  ]
+}

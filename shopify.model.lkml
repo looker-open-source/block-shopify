@@ -6,6 +6,12 @@ include: "views/*.view.lkml"
 # include all the dashboards
 include: "*.dashboard"
 
+explore: orders_core {
+  hidden: yes
+  extension: required
+}
+
+
 explore: orders {
 
   view_name: "order"
