@@ -400,6 +400,13 @@ view: order {
     type: sum
     sql: ${total_price} ;;
     drill_fields: [detail*]
+    value_format_name: usd
+  }
+
+  measure: count_order_items {
+    type: count
+    sql: ${id} = ${order_line.order_id} ;;
+    drill_fields: [detail*]
   }
 
   measure: count_new_customers {

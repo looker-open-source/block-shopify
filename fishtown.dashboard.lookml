@@ -1,5 +1,5 @@
 - dashboard: sales_summary
-  title: Sales Summary
+  title: Shopify Fishtown
   layout: grid
   width: 800
   rows:
@@ -35,29 +35,32 @@
     default_value: 'new'
 
   elements:
+
   - name: total_orders
-    title: Total Orders
-    type: single_value
+    title: Total Orders This Month
     model: shopify
     explore: orders
-    dimensions: [orders.processed_month]
-    fill_fields: [orders.processed_month]
-    measures: [orders.count]
+    type: single_value
+    fields: [order.created_month, order.count]
+    fill_fields: [order.created_month]
+    filters:
+      order.created_month: 12 months
+      location.name: ''
+      customer.new_vs_repeat: new
+    sorts: [order.created_month desc]
+    limit: 500
+    column_limit: 50
     dynamic_fields:
     - table_calculation: last_month
       label: last_month
-      expression: offset(${orders.count}, 1)
+      expression: offset(${order.count}, 1)
       value_format:
       value_format_name: decimal_0
     - table_calculation: wow_change
       label: wow_change
-      expression: "(${orders.count} - ${last_month}) / ${last_month}"
+      expression: "(${order.count} - ${last_month}) / ${last_month}"
       value_format:
       value_format_name: percent_0
-    sorts: [orders.processed_month desc]
-    limit: '500'
-    column_limit: '50'
-    query_timezone: America/New_York
     custom_color_enabled: false
     custom_color: forestgreen
     show_single_value_title: true
@@ -90,35 +93,31 @@
     series_types: {}
     hidden_fields: [last_month]
     comparison_label: month-over-month
-    listen:
-      date_range: orders.processed_month
-      shop_name: shops.shop_name
-      new_or_repeat: orders.new_vs_repeat
+
 
 
   - name: total_revenue
     title: Total Revenue
     type: single_value
     model: shopify
-    explore: sales
-    dimensions: [orders.processed_month]
-    fill_fields: [orders.processed_month]
-    measures: [sales.gross_sales_total]
+    explore: orders
+    dimensions: [order.created_month]
+    fill_fields: [order.created_month]
+    measures: [order.total_revenue]
     dynamic_fields:
     - table_calculation: last_month
       label: last_month
-      expression: offset(${sales.gross_sales_total}, 1)
+      expression: offset(${order.total_revenue}, 1)
       value_format:
       value_format_name: decimal_0
     - table_calculation: wow_change
       label: wow_change
-      expression: "(${sales.gross_sales_total} - ${last_month}) / ${last_month}"
+      expression: "(${order.total_revenue} - ${last_month}) / ${last_month}"
       value_format:
       value_format_name: percent_0
-    sorts: [orders.processed_month desc]
+    sorts: [order.created_month desc]
     limit: '500'
     column_limit: '50'
-    query_timezone: America/New_York
     custom_color_enabled: false
     custom_color: forestgreen
     show_single_value_title: true
@@ -151,10 +150,10 @@
     series_types: {}
     hidden_fields: [last_month]
     comparison_label: month-over-month
-    listen:
-      date_range: orders.processed_month
-      shop_name: shops.shop_name
-      new_or_repeat: orders.new_vs_repeat
+#     listen:
+#       date_range: order.processed_month
+#       shop_name: location.name
+#       new_or_repeat: customer.new_vs_repeat
 
   - name:  total_customers
     title: Total Customers
@@ -178,7 +177,6 @@
     sorts: [orders.processed_month_month desc]
     limit: '500'
     column_limit: '50'
-    query_timezone: America/New_York
     custom_color_enabled: false
     custom_color: forestgreen
     show_single_value_title: true
@@ -219,10 +217,10 @@
   - name: items_per_order
     title: Avg Items per Order
     model: shopify
-    explore: sales
+    explore: orders
     type: single_value
-    dimensions: [orders.processed_month]
-    fill_fields: [orders.processed_month]
+    dimensions: [order.created_month]
+    fill_fields: [order.created_month]
     measures: [sales.order_items, orders.count]
     dynamic_fields:
     - table_calculation: avg_items
@@ -243,7 +241,6 @@
     sorts: [orders.processed_month desc]
     limit: '500'
     column_limit: '50'
-    query_timezone: America/New_York
     custom_color_enabled: false
     custom_color: forestgreen
     show_single_value_title: true
@@ -305,7 +302,6 @@
     sorts: [orders.processed_month desc]
     limit: '500'
     column_limit: '50'
-    query_timezone: America/New_York
     custom_color_enabled: false
     custom_color: forestgreen
     show_single_value_title: true
@@ -372,7 +368,6 @@
     sorts: [orders.processed_month desc]
     limit: '500'
     column_limit: '50'
-    query_timezone: America/New_York
     custom_color_enabled: false
     custom_color: forestgreen
     show_single_value_title: true
