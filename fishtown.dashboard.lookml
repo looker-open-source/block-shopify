@@ -602,10 +602,10 @@
   - name: new_vs_repeat_pie
     title: New vs Repeat Customers
     model: shopify
-    explore: sales
+    explore: orders
     type: looker_pie
-    fields: [orders.new_vs_repeat, orders.count_customers]
-    sorts: [orders.new_vs_repeat desc]
+    fields: [customer.new_vs_repeat, customer.count]
+    sorts: [customer.new_vs_repeat desc]
     limit: 500
     column_limit: 50
     value_labels: legend
@@ -639,19 +639,19 @@
     series_colors:
       repeat: "#EEC200"
       new: "#007ACE"
-    listen:
-      date_range: orders.processed_month
-      shop_name: shops.shop_name
+#     listen:
+#       date_range: orders.processed_month
+#       shop_name: shops.shop_name
 
   - name: new_vs_repeat_over_time
     title: New vs Repeat Customer Count Over Time
     model: shopify
-    explore: sales
+    explore: orders
     type: looker_line
-    fields: [orders.count, orders.processed_month, orders.new_vs_repeat]
-    pivots: [orders.new_vs_repeat]
-    fill_fields: [orders.processed_month]
-    sorts: [orders.processed_month desc, orders.new_vs_repeat]
+    fields: [order.count, order.created_month, customer.new_vs_repeat]
+    pivots: [customer.new_vs_repeat]
+    fill_fields: [order.created_month]
+    sorts: [order.created_month desc, customer.new_vs_repeat]
     limit: 500
     stacking: ''
     show_value_labels: false
@@ -680,25 +680,25 @@
     totals_color: "#1C2260"
     series_types: {}
     series_colors:
-     new - orders.count: "#EEC200"
-     repeat - orders.count: "#007ACE"
-    listen:
-      date_range: orders.processed_month
-      shop_name: shops.shop_name
+     new - order.count: "#EEC200"
+     repeat - order.count: "#007ACE"
+#     listen:
+#       date_range: orders.processed_month
+#       shop_name: shops.shop_name
 
   - name: new_vs_repeat_stats
     title: New vs Repeat Customer Stats
     model: shopify
-    explore: sales
+    explore: orders
     type: looker_column
-    fields: [orders.avg_order_value, orders.new_vs_repeat, orders.count, sales.order_items]
-    sorts: [orders.avg_order_value desc]
+    fields: [order.avg_order_value, customer.new_vs_repeat, order.count, order_line.count_items]
+    sorts: [order.avg_order_value desc]
     limit: 500
     column_limit: 50
     dynamic_fields:
     - table_calculation: avg_order_items
       label: Avg Order Items
-      expression: "${sales.order_items}/${orders.count}"
+      expression: "${order_line.count_items}/${order.count}"
       value_format:
       value_format_name: decimal_1
       _kind_hint: measure
@@ -731,7 +731,7 @@
     groupBars: true
     showLegend: true
     series_colors:
-      orders.avg_order_value: "#EEC200"
+      order.avg_order_value: "#EEC200"
       avg_order_items: "#007ACE"
     x_axis_label: New vs Repeat
     y_axes: [{label: '',
@@ -745,7 +745,7 @@
               type: linear,
               unpinAxis: false,
               valueFormat: !!null '',
-              series: [{id: orders.avg_order_value,
+              series: [{id: order.avg_order_value,
                         name: Avg Order Value}]
               },
               {label: !!null '',
@@ -761,8 +761,8 @@
               valueFormat: !!null '',
               series: [{id: avg_order_items, name: Avg Order Items}]
               }]
-    hidden_fields: [sales.order_items, orders.count]
-    listen:
-      date_range: orders.processed_month
-      shop_name: shops.shop_name
-      new_or_repeat: orders.new_vs_repeat
+    hidden_fields: [order_line.count_items, order.count]
+#     listen:
+#       date_range: orders.processed_month
+#       shop_name: shops.shop_name
+#       new_or_repeat: orders.new_vs_repeat
