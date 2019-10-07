@@ -6,12 +6,6 @@ include: "*.dashboard.lookml"
 include: "//@{CONFIG_PROJECT_NAME}/*.view.lkml"
 include: "//@{CONFIG_PROJECT_NAME}/*.model.lkml"
 
-# include all views in this project
-include: "views/*.view.lkml"
-# include: "explores/*.explore.lkml"
-# include all the dashboards
-include: "business_pulse.dashboard"
-
 explore: orders_core {
   hidden: yes
   extension: required
