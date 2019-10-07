@@ -8,7 +8,7 @@ constant: CONNECTION_NAME {
 }
 
 constant: SCHEMA_NAME {
-  value: "insert here"
+  value: "looker_for_shopify"
   export: override_required
 }
 

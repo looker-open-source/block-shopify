@@ -38,7 +38,7 @@
 
   - name: total_orders
     title: Total Orders This Month
-    model: shopify
+    model: block_shopify
     explore: orders
     type: single_value
     fields: [order.created_month, order.count]
@@ -99,7 +99,7 @@
   - name: total_revenue
     title: Total Revenue
     type: single_value
-    model: shopify
+    model: block_shopify
     explore: orders
     dimensions: [order.created_month]
     fill_fields: [order.created_month]
@@ -158,7 +158,7 @@
   - name:  total_customers
     title: Total Customers
     type: single_value
-    model: shopify
+    model: block_shopify
     explore: orders
     dimensions: [order.created_month]
     fill_fields: [order.created_month]
@@ -216,7 +216,7 @@
 
   - name: items_per_order
     title: Avg Items per Order
-    model: shopify
+    model: block_shopify
     explore: orders
     type: single_value
     dimensions: [order.created_month]
@@ -281,7 +281,7 @@
   - name: avg_order_value
     title: Avg Order Value
     type: single_value
-    model: shopify
+    model: block_shopify
     explore: orders
     dimensions: [order.created_month]
     fill_fields: [order.created_month]
@@ -341,7 +341,7 @@
 
   - name: avg_customer_value
     title: Avg Customer Value
-    model: shopify
+    model: block_shopify
     explore: orders
     type: single_value
     dimensions: [order.created_month]
@@ -405,7 +405,7 @@
 
   - name: sales_and_orders_over_time
     title: Sales & Orders Over Time
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_line
     fields: [order.created_month, order.total_revenue, order.count]
@@ -457,7 +457,7 @@
 
   - name: avg_order_value_over_time
     title: Avg Order Value Over Time
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_line
     fields: [order.created_month, order.total_revenue, order.count]
@@ -485,7 +485,7 @@
 
   - name: top_products_units
     title: Top Products by Units Sold
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_bar
     fields: [order_line.count_items, product.title]
@@ -542,7 +542,7 @@
 
   - name: top_products_gross
     title: Top Products by Gross Sale
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_bar
     fields: [order_line.total_lifetime_revenue, product.title]
@@ -599,7 +599,7 @@
 
   - name: new_vs_repeat_pie
     title: New vs Repeat Customers
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_pie
     fields: [customer.new_vs_repeat, customer.count]
@@ -643,7 +643,7 @@
 
   - name: new_vs_repeat_over_time
     title: New vs Repeat Customer Count Over Time
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_line
     fields: [order.count, order.created_month, customer.new_vs_repeat]
@@ -686,7 +686,7 @@
 
   - name: new_vs_repeat_stats
     title: New vs Repeat Customer Stats
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_column
     fields: [order.avg_order_value, customer.new_vs_repeat, order.count, order_line.count_items]

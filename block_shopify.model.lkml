@@ -7,7 +7,6 @@ include: "//@{CONFIG_PROJECT_NAME}/*.view.lkml"
 include: "//@{CONFIG_PROJECT_NAME}/*.model.lkml"
 
 explore: orders_core {
-  hidden: yes
   extension: required
 }
 
@@ -16,7 +15,7 @@ explore: orders {
 
   view_name: "order"
   extends: [orders_config]
-  extension: required
+
   # ORDER
   join: order_line {
     sql_on: ${order_line.order_id} = ${order.id};;

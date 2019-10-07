@@ -51,7 +51,7 @@
     height: 4
   - title: New Tile
     name: New Tile
-    model: shopify
+    model: block_shopify
     explore: orders
     type: single_value
     fields: [order.created_quarter, order_line.count]
@@ -97,7 +97,7 @@
     height: 4
   - title: Orders by Day and Category
     name: Orders by Day and Category
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_area
     fields: [order_line.count, product_tag.value, order.created_date]
@@ -152,7 +152,7 @@
     height: 9
   - title: Total Sales, Year Over Year
     name: Total Sales, Year Over Year
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_line
     fields: [order.created_year, order.created_month_num, order.total_revenue]
@@ -219,7 +219,7 @@
     height: 7
   - title: New Customers This Year
     name: New Customers This Year
-    model: shopify
+    model: block_shopify
     explore: orders
     type: single_value
     fields: [customer.created_year, order.count_new_customers]
@@ -257,7 +257,7 @@
     height: 4
   - title: Order Drop-off Rate
     name: Order Drop-off Rate
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_column
     fields: [customer.orders_count, customer.count]
@@ -304,7 +304,7 @@
     height: 6
   - title: Top 5 Product Types Ordered
     name: Top 5 Product Types Ordered
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_pie
     fields: [order_line.total_lifetime_revenue, product_tag.value]
@@ -385,7 +385,7 @@
     height: 9
   - title: Total Revenue by Customer Creation Date
     name: Total Revenue by Customer Creation Date
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_line
     fields: [order.total_revenue, customer.created_date]
@@ -478,7 +478,7 @@
     height: 6
   - title: Product  Revenue Performance by Month
     name: Product  Revenue Performance by Month
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_area
     fields: [order.created_month_num, product_tag.value, order.total_revenue]
@@ -537,7 +537,7 @@
     height: 6
   - title: Top 10 Revenue Generating Cities
     name: Top 10 Revenue Generating Cities
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_column
     fields: [customer_address.city, order_line.total_lifetime_revenue]
@@ -595,7 +595,7 @@
     height: 9
   - title: User Spend by Location
     name: User Spend by Location
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_map
     fields: [order.shipping_location, order.total_revenue]
@@ -633,7 +633,7 @@
     height: 9
   - title: Sales & Orders Over Time
     name: Sales & Orders Over Time
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_line
     fields: [order.created_month, order.total_revenue, order.count]
@@ -684,7 +684,7 @@
     height: 7
   - title: Avg Order Value Over Time
     name: Avg Order Value Over Time
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_line
     fields: [order.created_month, order.total_revenue, order.count]
@@ -707,7 +707,7 @@
     height: 6
   - title: Top Products by Units Sold
     name: Top Products by Units Sold
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_bar
     fields: [order_line.count_items, product.title]
@@ -759,7 +759,7 @@
     height: 6
   - title: Top Products by Revenue
     name: Top Products by Revenue
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_bar
     fields: [order_line.total_lifetime_revenue, product.title]
@@ -811,7 +811,7 @@
     height: 6
   - title: New vs Repeat Customer Count Over Time
     name: New vs Repeat Customer Count Over Time
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_line
     fields: [order.count, order.created_month, customer.new_vs_repeat]
@@ -855,7 +855,7 @@
     height: 6
   - title: New vs Repeat Customers
     name: New vs Repeat Customers
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_pie
     fields: [customer.new_vs_repeat, customer.count]
@@ -900,7 +900,7 @@
     height: 6
   - title: New vs Repeat Customer Stats
     name: New vs Repeat Customer Stats
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_column
     fields: [order.avg_order_value, customer.new_vs_repeat, order.count, order_line.count_items]
@@ -959,7 +959,7 @@
     height: 6
   - title: Cohort Analysis
     name: Cohort Analysis
-    model: shopify
+    model: block_shopify
     explore: orders
     type: looker_line
     fields: [customer.created_month, order.created_month, order.total_revenue]
