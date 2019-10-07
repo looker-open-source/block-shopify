@@ -1,5 +1,11 @@
 connection: "@{CONNECTION_NAME}"
 
+include: "views/*.view.lkml"
+# include: "explores/*.explore.lkml"
+include: "*.dashboard.lookml"
+include: "//@{CONFIG_PROJECT_NAME}/*.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*.model.lkml"
+
 # include all views in this project
 include: "views/*.view.lkml"
 # include: "explores/*.explore.lkml"
