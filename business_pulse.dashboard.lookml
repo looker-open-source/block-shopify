@@ -4,7 +4,7 @@
   elements:
   - title: Untitled
     name: Untitled
-    model: shopify
+    model: block_shopify
     explore: orders
     type: single_value
     fields: [order_line.avg_price, order.created_date]
