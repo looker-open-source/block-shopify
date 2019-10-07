@@ -1,4 +1,10 @@
+include: "//@{CONFIG_PROJECT_NAME}/order_line.view"
+
 view: order_line {
+  extends: [order_line_config]
+}
+
+view: order_line_core {
   sql_table_name: shopify_for_looker.order_line ;;
   drill_fields: [id]
 

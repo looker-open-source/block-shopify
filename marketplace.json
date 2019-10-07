@@ -14,15 +14,8 @@
     "SCHEMA_NAME": {
       "label": "Schema Name"
     },
-    "AUDIT_LOG_EXPORT_TABLE_NAME": {
-      "label": "Audit Log Export Table Name",
-      "description": "The table name of your BQ Optimization data (typically cloudaudit_googleapis_com_data_access_*)."
-    },
     "CONFIG_PROJECT_NAME": {
       "label": "Config Project Name"
-    },
-    "REPORTING_PERIOD": {
-      "label": "Reporting Period"
     }
   },
   "models": [

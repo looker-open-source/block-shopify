@@ -1,4 +1,10 @@
+include: "//@{CONFIG_PROJECT_NAME}/product_tag.view"
+
 view: product_tag {
+  extends: [product_tag_config]
+}
+
+view: product_tag_core {
   sql_table_name: shopify_for_looker.product_tag ;;
 
   dimension_group: _fivetran_synced {

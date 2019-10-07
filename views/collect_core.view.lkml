@@ -1,4 +1,10 @@
+include: "//@{CONFIG_PROJECT_NAME}/collect.view.lkml"
+
 view: collect {
+  extends: [collect_config]
+}
+
+view: collect_core {
   sql_table_name: shopify_for_looker.collect ;;
   drill_fields: [id]
 

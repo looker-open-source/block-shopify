@@ -1,4 +1,10 @@
+include: "//@{CONFIG_PROJECT_NAME}/customer_address.view"
+
 view: customer_address {
+  extends: [customer_address_config]
+}
+
+view: customer_address_core {
   sql_table_name: shopify_for_looker.customer_address ;;
   drill_fields: [id]
 

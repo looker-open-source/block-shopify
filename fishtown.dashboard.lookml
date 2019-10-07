@@ -14,25 +14,25 @@
     - elements: [top_products_units, top_products_gross]
       height: 300
 
-  show_applied_filters: true
-  filters:
-  - name: date_range
-    title: 'Date Range'
-    type: field_filter
-    explore: orders
-    field: order.created_month
-    default_value: '12 months ago for 12 months'
-  - name: shop_name
-    title: 'Shop Name'
-    type: field_filter
-    explore: orders
-    field: location.name
-  - name: new_or_repeat
-    title: 'New or Repeating Users'
-    type: field_filter
-    explore: orders
-    field: customer.new_vs_repeat
-    default_value: 'new'
+  # show_applied_filters: true
+  # filters:
+  # - name: date_range
+  #   title: 'Date Range'
+  #   type: field_filter
+  #   explore: orders
+  #   field: order.created_month
+  #   default_value: '12 months ago for 12 months'
+  # - name: shop_name
+  #   title: 'Shop Name'
+  #   type: field_filter
+  #   explore: orders
+  #   field: location.name
+  # - name: new_or_repeat
+  #   title: 'New or Repeating Users'
+  #   type: field_filter
+  #   explore: orders
+  #   field: customer.new_vs_repeat
+  #   default_value: 'new'
 
   elements:
 

@@ -1,4 +1,10 @@
+include: "//@{CONFIG_PROJECT_NAME}/collection.view"
+
 view: collection {
+  extends: [collection_config]
+}
+
+view: collection_core {
   sql_table_name: shopify_for_looker.collection ;;
   drill_fields: [id]
 

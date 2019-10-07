@@ -1,8 +1,8 @@
-connection: "looker_app"
+connection: "@{CONNECTION_NAME}"
 
 # include all views in this project
 include: "views/*.view.lkml"
-
+# include: "explores/*.explore.lkml"
 # include all the dashboards
 include: "*.dashboard"
 
@@ -15,7 +15,8 @@ explore: orders_core {
 explore: orders {
 
   view_name: "order"
-
+  extends: [orders_config]
+  extension: required
   # ORDER
   join: order_line {
     sql_on: ${order_line.order_id} = ${order.id};;

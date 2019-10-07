@@ -1,4 +1,10 @@
+include: "//@{CONFIG_PROJECT_NAME}/customer_tag.view"
+
 view: customer_tag {
+  extends: [customer_tag_config]
+}
+
+view: customer_tag_core {
   sql_table_name: shopify_for_looker.customer_tag ;;
 
   dimension_group: _fivetran_synced {

@@ -1,4 +1,10 @@
+include: "//@{CONFIG_PROJECT_NAME}/product.view"
+
 view: product {
+  extends: [product_config]
+}
+
+view: product_core {
   sql_table_name: shopify_for_looker.product ;;
   drill_fields: [id]
 

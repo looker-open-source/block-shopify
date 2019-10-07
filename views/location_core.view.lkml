@@ -1,4 +1,10 @@
+include: "//@{CONFIG_PROJECT_NAME}/location.view"
+
 view: location {
+  extends: [location_config]
+}
+
+view: location_core {
   sql_table_name: shopify_for_looker.location ;;
   drill_fields: [id]
 
