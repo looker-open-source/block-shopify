@@ -4,7 +4,7 @@ connection: "@{CONNECTION_NAME}"
 include: "views/*.view.lkml"
 # include: "explores/*.explore.lkml"
 # include all the dashboards
-include: "*.dashboard"
+include: "business_pulse.dashboard"
 
 explore: orders_core {
   hidden: yes
