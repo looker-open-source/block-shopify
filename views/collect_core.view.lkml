@@ -27,6 +27,7 @@ view: collect_core {
       year
     ]
     sql: ${TABLE}._fivetran_synced ;;
+    hidden: yes
   }
 
   dimension: collection_id {

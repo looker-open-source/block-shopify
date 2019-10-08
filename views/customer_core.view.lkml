@@ -26,6 +26,7 @@ view: customer_core {
       year
     ]
     sql: ${TABLE}._fivetran_synced ;;
+    hidden: yes
   }
 
   dimension: accepts_marketing {
@@ -122,6 +123,18 @@ view: customer_core {
 
   measure: count {
     type: count
+    drill_fields: [detail*]
+  }
+
+  measure: avg_order_value {
+    type: average
+    sql: ${total_spent} ;;
+    drill_fields: [detail*]
+  }
+
+  measure: avg_order_count {
+    type: average
+    sql: ${order_count} ;;
     drill_fields: [detail*]
   }
 

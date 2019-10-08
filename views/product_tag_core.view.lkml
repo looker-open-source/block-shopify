@@ -19,6 +19,7 @@ view: product_tag_core {
       year
     ]
     sql: ${TABLE}._fivetran_synced ;;
+    hidden: yes
   }
 
   dimension: index {
