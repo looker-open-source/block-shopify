@@ -1258,7 +1258,7 @@
     name: Avg Items per Order over Time
     model: block_shopify
     explore: order
-    type: looker_line
+    type: looker_area
     fields: [order.created_month, order_line.avg_items_per_order]
     fill_fields: [order.created_month]
     sorts: [order.created_month desc]
