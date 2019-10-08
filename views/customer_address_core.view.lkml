@@ -26,35 +26,42 @@ view: customer_address_core {
       year
     ]
     sql: ${TABLE}._fivetran_synced ;;
+    hidden: yes
   }
 
   dimension: address_1 {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.address_1 ;;
   }
 
   dimension: address_2 {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.address_2 ;;
   }
 
   dimension: city {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.city ;;
   }
 
   dimension: company {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.company ;;
   }
 
   dimension: country {
+    group_label: "Address"
     type: string
     map_layer_name: countries
     sql: ${TABLE}.country ;;
   }
 
   dimension: country_code {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.country_code ;;
   }

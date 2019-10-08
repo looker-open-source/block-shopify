@@ -26,6 +26,7 @@ view: product_option_core {
       year
     ]
     sql: ${TABLE}._fivetran_synced ;;
+    hidden: yes
   }
 
   dimension: name {

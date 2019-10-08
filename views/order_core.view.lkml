@@ -27,79 +27,95 @@ view: order_core {
       year
     ]
     sql: ${TABLE}._fivetran_synced ;;
+    hidden: yes
   }
 
   dimension: billing_address_address_1 {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_address_1 ;;
   }
 
   dimension: billing_address_address_2 {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_address_2 ;;
   }
 
   dimension: billing_address_city {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_city ;;
   }
 
   dimension: billing_address_company {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_company ;;
   }
 
   dimension: billing_address_country {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_country ;;
   }
 
   dimension: billing_address_country_code {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_country_code ;;
   }
 
   dimension: billing_address_first_name {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_first_name ;;
   }
 
   dimension: billing_address_last_name {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_last_name ;;
   }
 
   dimension: billing_address_latitude {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_latitude ;;
   }
 
   dimension: billing_address_longitude {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_longitude ;;
   }
 
   dimension: billing_address_name {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_name ;;
   }
 
   dimension: billing_address_phone {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_phone ;;
   }
 
   dimension: billing_address_province {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_province ;;
   }
 
   dimension: billing_address_province_code {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_province_code ;;
   }
 
   dimension: billing_address_zip {
+    group_label: "Billing Address"
     type: string
     sql: ${TABLE}.billing_address_zip ;;
   }
@@ -254,82 +270,98 @@ view: order_core {
   }
 
   dimension: shipping_address_address_1 {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_address_1 ;;
   }
 
   dimension: shipping_address_address_2 {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_address_2 ;;
   }
 
   dimension: shipping_address_city {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_city ;;
   }
 
   dimension: shipping_address_company {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_company ;;
   }
 
   dimension: shipping_address_country {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_country ;;
   }
 
   dimension: shipping_address_country_code {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_country_code ;;
   }
 
   dimension: shipping_address_first_name {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_first_name ;;
   }
 
   dimension: shipping_address_last_name {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_last_name ;;
   }
 
   dimension: shipping_address_latitude {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_latitude ;;
   }
 
   dimension: shipping_address_longitude {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_longitude ;;
   }
 
   dimension: shipping_location {
+    group_label: "Shipping Address"
     type: location
     sql_longitude: ${shipping_address_longitude} ;;
     sql_latitude: ${shipping_address_latitude} ;;
   }
 
   dimension: shipping_address_name {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_name ;;
   }
 
   dimension: shipping_address_phone {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_phone ;;
   }
 
   dimension: shipping_address_province {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_province ;;
   }
 
   dimension: shipping_address_province_code {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_province_code ;;
   }
 
   dimension: shipping_address_zip {
+    group_label: "Shipping Address"
     type: string
     sql: ${TABLE}.shipping_address_zip ;;
   }

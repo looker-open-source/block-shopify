@@ -26,6 +26,7 @@ view: order_line_core {
       year
     ]
     sql: ${TABLE}._fivetran_synced ;;
+    hidden: yes
   }
 
   dimension: fulfillable_quantity {
