@@ -1172,7 +1172,7 @@
     col: 0
     width: 8
     height: 4
-  - name: 'test1'
+  - name: 'tile2'
     type: text
     title_text: ''
     body_text: |-
@@ -1185,7 +1185,7 @@
     col: 0
     width: 24
     height: 2
-  - name: 'test2'
+  - name: 'tile1'
     type: text
     title_text: ''
     body_text: |-
@@ -1259,18 +1259,11 @@
     model: block_shopify
     explore: order
     type: looker_line
-    fields: [order.created_month, order_line.count_items, order.count]
+    fields: [order.created_month, order_line.avg_number_of_items]
     fill_fields: [order.created_month]
-    sorts: [avg_items]
+    sorts: [order.created_month desc]
     limit: 500
     column_limit: 50
-    dynamic_fields: [{table_calculation: avg_items, label: avg_items, expression: "${order_line.count_items}/${order.count}",
-        value_format: !!null '', value_format_name: decimal_2, _kind_hint: measure,
-        _type_hint: number}, {table_calculation: last_month, label: last_month, expression: 'offset(${avg_items},
-          1)', value_format: !!null '', value_format_name: decimal_2, _kind_hint: measure,
-        _type_hint: number}, {table_calculation: wow_change, label: wow_change, expression: "(${avg_items}\
-          \ - ${last_month}) / ${last_month}", value_format: !!null '', value_format_name: percent_0,
-        _kind_hint: measure, _type_hint: number}]
     color_application:
       collection_id: 5b121cce-cf79-457c-a52a-9162dc174766
       palette_id: 55dee055-18cf-4472-9669-469322a6f264
@@ -1278,7 +1271,7 @@
         steps: 5
     x_axis_gridlines: false
     y_axis_gridlines: true
-    show_view_names: true
+    show_view_names: false
     y_axes: [{label: '', orientation: left, series: [{axisId: wow_change, id: wow_change,
             name: wow_change}, {axisId: avg_items, id: avg_items, name: avg_items}],
         showLabels: true, showValues: true, unpinAxis: false, tickDensity: default,
@@ -1287,7 +1280,7 @@
     show_y_axis_ticks: true
     y_axis_tick_density: default
     y_axis_tick_density_custom: 5
-    show_x_axis_label: false
+    show_x_axis_label: true
     show_x_axis_ticks: true
     y_axis_scale_mode: linear
     x_axis_reversed: false
@@ -1296,7 +1289,7 @@
     trellis: ''
     stacking: ''
     limit_displayed_rows: false
-    legend_position: center
+    legend_position: right
     series_types: {}
     point_style: none
     series_colors:
@@ -1323,7 +1316,7 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: "#1C2260"
-    hidden_fields: [order_line.count_items, order.count, last_month]
+    hidden_fields: []
     comparison_label: month-over-month
     listen: {}
     row: 14

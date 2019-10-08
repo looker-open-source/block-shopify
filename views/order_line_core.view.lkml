@@ -137,6 +137,11 @@ view: order_line_core {
     type: count
   }
 
+  measure: avg_number_of_items {
+    type:number
+    sql: ${count_items}/${order.count} ;;
+  }
+
   measure: total_lifetime_revenue {
     type: sum
     sql: ${price} ;;
