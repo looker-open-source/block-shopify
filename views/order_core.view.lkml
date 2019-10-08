@@ -443,7 +443,7 @@ view: order_core {
   }
 
   measure: avg_order_value {
-    type: sum
+    type: average
     sql: ${total_price} ;;
     drill_fields: [detail*]
     value_format_name: usd
