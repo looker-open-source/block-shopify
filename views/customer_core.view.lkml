@@ -126,6 +126,18 @@ view: customer_core {
     drill_fields: [detail*]
   }
 
+  measure: avg_order_value {
+    type: average
+    sql: ${total_spent} ;;
+    drill_fields: [detail*]
+  }
+
+  measure: avg_order_count {
+    type: average
+    sql: ${order_count} ;;
+    drill_fields: [detail*]
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
