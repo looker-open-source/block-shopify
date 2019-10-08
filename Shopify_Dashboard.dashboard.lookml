@@ -1259,7 +1259,7 @@
     model: block_shopify
     explore: order
     type: looker_line
-    fields: [order.created_month, order_line.avg_number_of_items]
+    fields: [order.created_month, order_line.avg_items_per_order]
     fill_fields: [order.created_month]
     sorts: [order.created_month desc]
     limit: 500

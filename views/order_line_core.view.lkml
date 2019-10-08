@@ -137,7 +137,7 @@ view: order_line_core {
     type: count
   }
 
-  measure: avg_number_of_items {
+  measure: avg_items_per_order {
     type:number
     sql: ${count_items}/${order.count} ;;
   }
