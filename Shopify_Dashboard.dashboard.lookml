@@ -1172,7 +1172,7 @@
     col: 0
     width: 8
     height: 4
-  - name: ''
+  - name: 'test1'
     type: text
     title_text: ''
     body_text: |-
@@ -1185,7 +1185,7 @@
     col: 0
     width: 24
     height: 2
-  - name: ''
+  - name: 'test2'
     type: text
     title_text: ''
     body_text: |-
