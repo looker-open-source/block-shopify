@@ -5,7 +5,7 @@
   - title: Untitled
     name: Untitled
     model: block_shopify
-    explore: orders
+    explore: order
     type: single_value
     fields: [order_line.avg_price, order.created_date]
     fill_fields: [order.created_date]
@@ -52,7 +52,7 @@
   - title: New Tile
     name: New Tile
     model: block_shopify
-    explore: orders
+    explore: order
     type: single_value
     fields: [order.created_quarter, order_line.count]
     sorts: [order_line.count desc]
@@ -89,23 +89,23 @@
     show_silhouette: false
     totals_color: "#808080"
     series_types: {}
-    single_value_title: Orders This Quarter
+    single_value_title: order This Quarter
     listen: {}
     row: 0
     col: 8
     width: 8
     height: 4
-  - title: Orders by Day and Category
-    name: Orders by Day and Category
+  - name: Top 15 Product Tag Orders
+    title: Top 15 Product Tag Orders
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_area
-    fields: [order_line.count, product_tag.value, order.created_date]
-    pivots: [product_tag.value]
+    fields: [order_line.count, order.created_date, top_15.product_tag]
+    pivots: [top_15.product_tag]
     fill_fields: [order.created_date]
     filters:
       order.created_month: 2018/01/01 to 2019/12/31
-    sorts: [orders_line.count desc 0, product_tag.value]
+    sorts: [order.created_date desc, top_15.product_tag]
     limit: 500
     column_limit: 50
     stacking: normal
@@ -153,7 +153,7 @@
   - title: Total Sales, Year Over Year
     name: Total Sales, Year Over Year
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_line
     fields: [order.created_year, order.created_month_num, order.total_revenue]
     pivots: [order.created_year]
@@ -220,7 +220,7 @@
   - title: New Customers This Year
     name: New Customers This Year
     model: block_shopify
-    explore: orders
+    explore: order
     type: single_value
     fields: [customer.created_year, order.count_new_customers]
     fill_fields: [customer.created_year]
@@ -258,10 +258,10 @@
   - title: Order Drop-off Rate
     name: Order Drop-off Rate
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_column
-    fields: [customer.orders_count, customer.count]
-    sorts: [customer.orders_count]
+    fields: [customer.order_count, customer.count]
+    sorts: [customer.order_count]
     limit: 5
     column_limit: 50
     stacking: ''
@@ -289,11 +289,11 @@
     show_silhouette: false
     totals_color: "#808080"
     series_colors:
-      customers.count: "#d088c5"
+      customer.count: "#d088c5"
     show_dropoff: true
     y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: left,
         showLabels: true, showValues: false, tickDensity: default, tickDensityCustom: 5,
-        type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: customers.count,
+        type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: customer.count,
             name: Customers Count, axisId: customer.count, __FILE: block-shopify/business_pulse.dashboard.lookml,
             __LINE_NUM: 337}], __FILE: block-shopify/business_pulse.dashboard.lookml,
         __LINE_NUM: 335}]
@@ -305,7 +305,7 @@
   - title: Top 5 Product Types Ordered
     name: Top 5 Product Types Ordered
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_pie
     fields: [order_line.total_lifetime_revenue, product_tag.value]
     sorts: [order_line.total_lifetime_revenue desc, product_tag.value]
@@ -386,7 +386,7 @@
   - title: Total Revenue by Customer Creation Date
     name: Total Revenue by Customer Creation Date
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_line
     fields: [order.total_revenue, customer.created_date]
     fill_fields: [customer.created_date]
@@ -467,7 +467,7 @@
     y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: left,
         showLabels: true, showValues: true, tickDensity: default, tickDensityCustom: 5,
         type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: order.total_revenue,
-            name: Orders Total Order Revenue, axisId: orders.total_revenue, __FILE: block-shopify/business_pulse.dashboard.lookml,
+            name: order Total Order Revenue, axisId: order.total_revenue, __FILE: block-shopify/business_pulse.dashboard.lookml,
             __LINE_NUM: 510}], __FILE: block-shopify/business_pulse.dashboard.lookml,
         __LINE_NUM: 508}]
     x_axis_label: Customer Creation Date
@@ -479,7 +479,7 @@
   - title: Product  Revenue Performance by Month
     name: Product  Revenue Performance by Month
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_area
     fields: [order.created_month_num, product_tag.value, order.total_revenue]
     pivots: [product_tag.value]
@@ -522,7 +522,7 @@
     y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: left,
         showLabels: true, showValues: true, tickDensity: default, tickDensityCustom: 5,
         type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: order.total_revenue,
-            name: Orders Total Order Revenue, axisId: order.total_revenue, __FILE: block-shopify/business_pulse.dashboard.lookml,
+            name: order Total Order Revenue, axisId: order.total_revenue, __FILE: block-shopify/business_pulse.dashboard.lookml,
             __LINE_NUM: 566}], __FILE: block-shopify/business_pulse.dashboard.lookml,
         __LINE_NUM: 564}]
     x_axis_label: Order Date
@@ -538,7 +538,7 @@
   - title: Top 10 Revenue Generating Cities
     name: Top 10 Revenue Generating Cities
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_column
     fields: [customer_address.city, order_line.total_lifetime_revenue]
     filters:
@@ -579,7 +579,7 @@
     y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: left,
         showLabels: true, showValues: true, tickDensity: default, tickDensityCustom: 5,
         type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: order.total_revenue,
-            name: Orders Total Order Revenue, axisId: order.total_revenue, __FILE: block-shopify/business_pulse.dashboard.lookml,
+            name: order Total Order Revenue, axisId: order.total_revenue, __FILE: block-shopify/business_pulse.dashboard.lookml,
             __LINE_NUM: 624}], __FILE: block-shopify/business_pulse.dashboard.lookml,
         __LINE_NUM: 622}]
     x_axis_label: City
@@ -596,7 +596,7 @@
   - title: User Spend by Location
     name: User Spend by Location
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_map
     fields: [order.shipping_location, order.total_revenue]
     sorts: [order.total_revenue desc]
@@ -631,10 +631,10 @@
     col: 0
     width: 13
     height: 9
-  - title: Sales & Orders Over Time
-    name: Sales & Orders Over Time
+  - title: Sales & order Over Time
+    name: Sales & order Over Time
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_line
     fields: [order.created_month, order.total_revenue, order.count]
     fill_fields: [order.created_month]
@@ -675,7 +675,7 @@
       {label: !!null '', maxValue: !!null '', minValue: !!null '', orientation: right,
         showLabels: true, showValues: true, tickDensity: default, tickDensityCustom: 5,
         type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: order.count,
-            name: Orders, __FILE: block-shopify/fishtown.dashboard.lookml, __LINE_NUM: 449}],
+            name: order, __FILE: block-shopify/fishtown.dashboard.lookml, __LINE_NUM: 449}],
         __FILE: block-shopify/fishtown.dashboard.lookml, __LINE_NUM: 447}]
     listen: {}
     row: 4
@@ -685,7 +685,7 @@
   - title: Avg Order Value Over Time
     name: Avg Order Value Over Time
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_line
     fields: [order.created_month, order.total_revenue, order.count]
     fill_fields: [order.created_month]
@@ -708,7 +708,7 @@
   - title: Top Products by Units Sold
     name: Top Products by Units Sold
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_bar
     fields: [order_line.count_items, product.title]
     filters:
@@ -760,7 +760,7 @@
   - title: Top Products by Revenue
     name: Top Products by Revenue
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_bar
     fields: [order_line.total_lifetime_revenue, product.title]
     filters:
@@ -812,7 +812,7 @@
   - title: New vs Repeat Customer Count Over Time
     name: New vs Repeat Customer Count Over Time
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_line
     fields: [order.count, order.created_month, customer.new_vs_repeat]
     pivots: [customer.new_vs_repeat]
@@ -856,7 +856,7 @@
   - title: New vs Repeat Customers
     name: New vs Repeat Customers
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_pie
     fields: [customer.new_vs_repeat, customer.count]
     sorts: [customer.new_vs_repeat desc]
@@ -901,7 +901,7 @@
   - title: New vs Repeat Customer Stats
     name: New vs Repeat Customer Stats
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_column
     fields: [order.avg_order_value, customer.new_vs_repeat, order.count, order_line.count_items]
     sorts: [order.avg_order_value desc]
@@ -960,7 +960,7 @@
   - title: Cohort Analysis
     name: Cohort Analysis
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_line
     fields: [customer.created_month, order.created_month, order.total_revenue]
     pivots: [order.created_month]

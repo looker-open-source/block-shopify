@@ -6,21 +6,17 @@ include: "*.dashboard.lookml"
 include: "//@{CONFIG_PROJECT_NAME}/*.view.lkml"
 include: "//@{CONFIG_PROJECT_NAME}/*.model.lkml"
 
-explore: orders_core {
-  extension: required
+explore: order {
+  extends: [order_config]
 }
 
+explore: order_core {
+  extension: required
 
-explore: orders {
-
-  view_name: "order"
-  extends: [orders_config]
-
-  # ORDER
-  join: top_15_categories {
+  join: top_15 {
     type: inner
     relationship: many_to_one
-    sql_on: ${product_tag.value} = ${top_15_categories.product_tag} ;;
+    sql_on: ${product_tag.value} = ${top_15.product_tag} ;;
   }
 
   join: order_line {
