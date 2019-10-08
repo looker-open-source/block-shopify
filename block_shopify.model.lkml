@@ -17,6 +17,12 @@ explore: orders {
   extends: [orders_config]
 
   # ORDER
+  join: top_15_categories {
+    type: inner
+    relationship: many_to_one
+    sql_on: ${product_tag.value} = ${top_15_categories.product_tag} ;;
+  }
+
   join: order_line {
     sql_on: ${order_line.order_id} = ${order.id};;
     relationship: one_to_many
