@@ -149,6 +149,12 @@ view: order_line_core {
     drill_fields: [product.title, order_line.title, order_line.price]
   }
 
+  measure: inventory_deficit {
+    type: number
+    sql: ${order_line.total_fulfillable_quantity}-${order_line.total_quantity_ordered} ;;
+    drill_fields: [product.title, order_line.title, order_line.price]
+  }
+
   measure: avg_items_per_order {
     type:number
     sql: ${count_items}/${order.count} ;;
