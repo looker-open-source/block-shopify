@@ -137,6 +137,18 @@ view: order_line_core {
     type: count
   }
 
+  measure: total_quantity_ordered {
+    type: sum
+    sql: ${quantity} ;;
+    drill_fields: [product.title, order_line.title, order_line.price]
+  }
+
+  measure: total_fulfillable_quantity {
+    type: sum
+    sql: ${fulfillable_quantity} ;;
+    drill_fields: [product.title, order_line.title, order_line.price]
+  }
+
   measure: avg_items_per_order {
     type:number
     sql: ${count_items}/${order.count} ;;
