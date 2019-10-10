@@ -1,5 +1,6 @@
 - dashboard: shopify_dashboard
   title: Shopify Dashboard
+  hidden: yes
   layout: newspaper
   elements:
   - title: Total Orders This Month
