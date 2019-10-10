@@ -17,6 +17,6 @@ view: top_15 {
     group_label: "Simple Example"
     order_by_field: rank
     type: string
-    sql: CONCAT(${rank}, ') ',${product_tag}) ;;
+    sql: CONCAT(CAST(${rank} as STRING), ') ',${product_tag}) ;;
   }
 }
