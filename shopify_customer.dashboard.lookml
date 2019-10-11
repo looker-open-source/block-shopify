@@ -482,3 +482,66 @@
     col: 0
     width: 24
     height: 2
+  - title: Order Count by Customer Age
+    name: Order Count by Customer Age
+    model: block_shopify
+    explore: order
+    type: looker_area
+    fields: [order.customer_age, order.count, order.created_month]
+    pivots: [order.customer_age]
+    fill_fields: [order.created_month]
+    filters:
+      order.customer_age: NOT NULL
+    sorts: [order.customer_age, order.created_month desc]
+    limit: 5000
+    column_limit: 50
+    color_application:
+      collection_id: 5b121cce-cf79-457c-a52a-9162dc174766
+      palette_id: 55dee055-18cf-4472-9669-469322a6f264
+      options:
+        steps: 5
+        reverse: true
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: normal
+    limit_displayed_rows: false
+    hidden_series: []
+    legend_position: center
+    series_types: {}
+    point_style: none
+    series_colors:
+      "-2 - order.count": "#3BA2A0"
+      "-1 - order.count": "#93CF6C"
+      0 - order.count: "#2865BE"
+      183 - order.count: "#5DC370"
+      "-2 - calculation_1": "#359299"
+      "-1 - calculation_1": "#5DC370"
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    show_null_points: true
+    interpolation: linear
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    ordering: none
+    show_null_labels: false
+    hidden_fields:
+    listen: {}
+    row: 31
+    col: 0
+    width: 24
+    height: 10
