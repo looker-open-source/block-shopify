@@ -199,6 +199,12 @@ view: order_core {
     sql: ${TABLE}.customer_id ;;
   }
 
+  dimension: customer_age {
+    type: number
+    # hidden: yes
+    sql: date_diff(${customer.created_date}, ${created_date}) ;;
+  }
+
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
