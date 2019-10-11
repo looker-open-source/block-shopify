@@ -19,6 +19,7 @@ view: customer_tag_core {
       year
     ]
     sql: ${TABLE}._fivetran_synced ;;
+    hidden: yes
   }
 
   dimension: customer_id {

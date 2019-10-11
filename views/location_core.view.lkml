@@ -26,6 +26,7 @@ view: location_core {
       year
     ]
     sql: ${TABLE}._fivetran_synced ;;
+    hidden: yes
   }
 
   dimension: active {
@@ -34,21 +35,25 @@ view: location_core {
   }
 
   dimension: address_1 {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.address_1 ;;
   }
 
   dimension: address_2 {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.address_2 ;;
   }
 
   dimension: city {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.city ;;
   }
 
   dimension: country {
+    group_label: "Address"
     type: string
     map_layer_name: countries
     sql: ${TABLE}.country ;;

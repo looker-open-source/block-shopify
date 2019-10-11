@@ -7,6 +7,7 @@ view: collect {
 view: collect_core {
   sql_table_name: shopify_for_looker.collect ;;
   drill_fields: [id]
+  extension: required
 
   dimension: id {
     primary_key: yes
@@ -26,6 +27,7 @@ view: collect_core {
       year
     ]
     sql: ${TABLE}._fivetran_synced ;;
+    hidden: yes
   }
 
   dimension: collection_id {

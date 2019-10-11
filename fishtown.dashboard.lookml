@@ -1,13 +1,14 @@
 - dashboard: sales_summary
   title: Shopify Fishtown
+  hidden: yes
   layout: grid
   width: 800
   rows:
-    - elements: [total_orders, total_revenue, total_customers]
+    - elements: [total_order, total_revenue, total_customers]
       height: 200
     - elements: [items_per_order, avg_order_value, avg_customer_value]
       height: 200
-    - elements: [sales_and_orders_over_time, avg_order_value_over_time]
+    - elements: [sales_and_order_over_time, avg_order_value_over_time]
       height: 300
     - elements: [new_vs_repeat_over_time,new_vs_repeat_pie, new_vs_repeat_stats]
       height: 300
@@ -19,27 +20,27 @@
   # - name: date_range
   #   title: 'Date Range'
   #   type: field_filter
-  #   explore: orders
+  #   explore: order
   #   field: order.created_month
   #   default_value: '12 months ago for 12 months'
   # - name: shop_name
   #   title: 'Shop Name'
   #   type: field_filter
-  #   explore: orders
+  #   explore: order
   #   field: location.name
   # - name: new_or_repeat
   #   title: 'New or Repeating Users'
   #   type: field_filter
-  #   explore: orders
+  #   explore: order
   #   field: customer.new_vs_repeat
   #   default_value: 'new'
 
   elements:
 
-  - name: total_orders
-    title: Total Orders This Month
+  - name: total_order
+    title: Total order This Month
     model: block_shopify
-    explore: orders
+    explore: order
     type: single_value
     fields: [order.created_month, order.count]
     fill_fields: [order.created_month]
@@ -100,7 +101,7 @@
     title: Total Revenue
     type: single_value
     model: block_shopify
-    explore: orders
+    explore: order
     dimensions: [order.created_month]
     fill_fields: [order.created_month]
     measures: [order.total_revenue]
@@ -159,7 +160,7 @@
     title: Total Customers
     type: single_value
     model: block_shopify
-    explore: orders
+    explore: order
     dimensions: [order.created_month]
     fill_fields: [order.created_month]
     measures: [customer.count]
@@ -210,14 +211,14 @@
     hidden_fields: [last_month]
     comparison_label: month-over-month
 #     listen:
-#       date_range: orders.processed_month
+#       date_range: order.processed_month
 #       shop_name: shops.shop_name
-#       new_or_repeat: orders.new_vs_repeat
+#       new_or_repeat: order.new_vs_repeat
 
   - name: items_per_order
     title: Avg Items per Order
     model: block_shopify
-    explore: orders
+    explore: order
     type: single_value
     dimensions: [order.created_month]
     fill_fields: [order.created_month]
@@ -274,15 +275,15 @@
     hidden_fields: [order_line.count_items, order.count, last_month]
     comparison_label: month-over-month
 #     listen:
-#       date_range: orders.processed_month
+#       date_range: order.processed_month
 #       shop_name: shops.shop_name
-#       new_or_repeat: orders.new_vs_repeat
+#       new_or_repeat: order.new_vs_repeat
 
   - name: avg_order_value
     title: Avg Order Value
     type: single_value
     model: block_shopify
-    explore: orders
+    explore: order
     dimensions: [order.created_month]
     fill_fields: [order.created_month]
     measures: [order.avg_order_value]
@@ -342,7 +343,7 @@
   - name: avg_customer_value
     title: Avg Customer Value
     model: block_shopify
-    explore: orders
+    explore: order
     type: single_value
     dimensions: [order.created_month]
     fill_fields: [order.created_month]
@@ -399,14 +400,14 @@
     hidden_fields: [order.total_revenue, customer.count, last_month]
     comparison_label: month-over-month
 #     listen:
-#       date_range: orders.processed_month
+#       date_range: order.processed_month
 #       shop_name: shops.shop_name
-#       new_or_repeat: orders.new_vs_repeat
+#       new_or_repeat: order.new_vs_repeat
 
-  - name: sales_and_orders_over_time
-    title: Sales & Orders Over Time
+  - name: sales_and_order_over_time
+    title: Sales & order Over Time
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_line
     fields: [order.created_month, order.total_revenue, order.count]
     fill_fields: [order.created_month]
@@ -447,18 +448,18 @@
       {label: !!null '', maxValue: !!null '', minValue: !!null '', orientation: right,
         showLabels: true, showValues: true, tickDensity: default, tickDensityCustom: 5,
         type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: order.count,
-            name: Orders, __FILE: shopify/fishtown.dashboard.lookml, __LINE_NUM: 442}],
+            name: order, __FILE: shopify/fishtown.dashboard.lookml, __LINE_NUM: 442}],
         __FILE: shopify/fishtown.dashboard.lookml, __LINE_NUM: 439}]
 #     listen:
-#       date_range: orders.processed_month
+#       date_range: order.processed_month
 #       shop_name: shops.shop_name
-#       new_or_repeat: orders.new_vs_repeat
+#       new_or_repeat: order.new_vs_repeat
 
 
   - name: avg_order_value_over_time
     title: Avg Order Value Over Time
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_line
     fields: [order.created_month, order.total_revenue, order.count]
     fill_fields: [order.created_month]
@@ -479,14 +480,14 @@
     series_colors:
     avg_order_value: "#1C2260"
 #     listen:
-#       date_range: orders.processed_month
+#       date_range: order.processed_month
 #       shop_name: shops.shop_name
-#       new_or_repeat: orders.new_vs_repeat
+#       new_or_repeat: order.new_vs_repeat
 
   - name: top_products_units
     title: Top Products by Units Sold
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_bar
     fields: [order_line.count_items, product.title]
     filters:
@@ -536,14 +537,14 @@
     x_axis_label: Product ID
     hidden_points_if_no: [yesno]
 #     listen:
-#       date_range: orders.processed_month
+#       date_range: order.processed_month
 #       shop_name: shops.shop_name
-#       new_or_repeat: orders.new_vs_repeat
+#       new_or_repeat: order.new_vs_repeat
 
   - name: top_products_gross
     title: Top Products by Gross Sale
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_bar
     fields: [order_line.total_lifetime_revenue, product.title]
     filters:
@@ -593,14 +594,14 @@
     x_axis_label: Product ID
     hidden_points_if_no: [yesno]
 #     listen:
-#       date_range: orders.processed_month
+#       date_range: order.processed_month
 #       shop_name: shops.shop_name
-#       new_or_repeat: orders.new_vs_repeat
+#       new_or_repeat: order.new_vs_repeat
 
   - name: new_vs_repeat_pie
     title: New vs Repeat Customers
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_pie
     fields: [customer.new_vs_repeat, customer.count]
     sorts: [customer.new_vs_repeat desc]
@@ -638,13 +639,13 @@
       repeat: "#EEC200"
       new: "#007ACE"
 #     listen:
-#       date_range: orders.processed_month
+#       date_range: order.processed_month
 #       shop_name: shops.shop_name
 
   - name: new_vs_repeat_over_time
     title: New vs Repeat Customer Count Over Time
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_line
     fields: [order.count, order.created_month, customer.new_vs_repeat]
     pivots: [customer.new_vs_repeat]
@@ -681,13 +682,13 @@
      new - order.count: "#EEC200"
      repeat - order.count: "#007ACE"
 #     listen:
-#       date_range: orders.processed_month
+#       date_range: order.processed_month
 #       shop_name: shops.shop_name
 
   - name: new_vs_repeat_stats
     title: New vs Repeat Customer Stats
     model: block_shopify
-    explore: orders
+    explore: order
     type: looker_column
     fields: [order.avg_order_value, customer.new_vs_repeat, order.count, order_line.count_items]
     sorts: [order.avg_order_value desc]
@@ -761,6 +762,6 @@
               }]
     hidden_fields: [order_line.count_items, order.count]
 #     listen:
-#       date_range: orders.processed_month
+#       date_range: order.processed_month
 #       shop_name: shops.shop_name
-#       new_or_repeat: orders.new_vs_repeat
+#       new_or_repeat: order.new_vs_repeat

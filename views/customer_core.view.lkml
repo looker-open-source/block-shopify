@@ -26,6 +26,7 @@ view: customer_core {
       year
     ]
     sql: ${TABLE}._fivetran_synced ;;
+    hidden: yes
   }
 
   dimension: accepts_marketing {
@@ -67,7 +68,7 @@ view: customer_core {
     sql: ${TABLE}.last_name ;;
   }
 
-  dimension: orders_count {
+  dimension: order_count {
     type: number
     sql: ${TABLE}.orders_count ;;
   }
@@ -75,8 +76,8 @@ view: customer_core {
   dimension: new_vs_repeat {
     type: string
     sql: case
-         when ${orders_count} = 1 then 'new'
-         when ${orders_count} = 0 then 'new'
+         when ${order_count} = 1 then 'new'
+         when ${order_count} = 0 then 'new'
          else 'repeat' end ;;
     group_label: "Other"
   }
@@ -122,6 +123,24 @@ view: customer_core {
 
   measure: count {
     type: count
+    drill_fields: [detail*]
+  }
+
+  measure: sum_total_spent {
+    type: sum
+    sql: ${total_spent} ;;
+    drill_fields: [detail*]
+  }
+
+  measure: avg_order_value {
+    type: average
+    sql: ${total_spent} ;;
+    drill_fields: [detail*]
+  }
+
+  measure: avg_order_count {
+    type: average
+    sql: ${order_count} ;;
     drill_fields: [detail*]
   }
 
