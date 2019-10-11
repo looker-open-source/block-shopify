@@ -202,7 +202,7 @@ view: order_core {
   dimension: customer_age {
     type: number
     # hidden: yes
-    sql: date_diff(${customer.created_date}, ${created_date}) ;;
+    sql: DATE_DIFF(${customer.created_date}, ${created_date}, DAY) ;;
   }
 
   dimension: email {
