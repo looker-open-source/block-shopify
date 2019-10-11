@@ -20,7 +20,7 @@
   },
   "models": [
     {
-      "name": "shopify",
+      "name": "block_shopify",
       "connection_constant": "CONNECTION_NAME"
     }
   ],
