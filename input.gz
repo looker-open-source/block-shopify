@@ -1,0 +1,292 @@
+digraph {
+    graph [pad="0.5", nodesep="0.5", ranksep="2"];
+    node [shape=plain]
+    rankdir=RL;
+
+customer_tag  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>customer_tag</i></td></tr>
+  <tr><td port="customer_tagcustomer_id">customer_id</td></tr>
+  <tr><td port="customer_tagindex">index</td></tr>
+  <tr><td port="customer_tagvalue">value</td></tr>
+</table>>];
+
+
+
+order_line  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>order_line</i></td></tr>
+  <tr><td port="order_lineid">id</td></tr>
+  <tr><td port="order_linefulfillable_quantity">fulfillable_quantity</td></tr>
+  <tr><td port="order_linefulfillment_service">fulfillment_service</td></tr>
+  <tr><td port="order_linefulfillment_status">fulfillment_status</td></tr>
+  <tr><td port="order_linegift_card">gift_card</td></tr>
+  <tr><td port="order_linegrams">grams</td></tr>
+  <tr><td port="order_linename">name</td></tr>
+  <tr><td port="order_lineorder_id">order_id</td></tr>
+  <tr><td port="order_linepre_tax_price">pre_tax_price</td></tr>
+  <tr><td port="order_lineprice">price</td></tr>
+  <tr><td port="order_lineproduct_id">product_id</td></tr>
+  <tr><td port="order_linequantity">quantity</td></tr>
+  <tr><td port="order_linerequires_shipping">requires_shipping</td></tr>
+  <tr><td port="order_linesku">sku</td></tr>
+  <tr><td port="order_linetaxable">taxable</td></tr>
+  <tr><td port="order_linetitle">title</td></tr>
+  <tr><td port="order_linetotal_discount">total_discount</td></tr>
+  <tr><td port="order_linevariant_id">variant_id</td></tr>
+  <tr><td port="order_linevendor">vendor</td></tr>
+</table>>];
+
+
+
+product_variant  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>product_variant</i></td></tr>
+  <tr><td port="product_variantid">id</td></tr>
+  <tr><td port="product_variantbarcode">barcode</td></tr>
+  <tr><td port="product_variantcompare_at_price">compare_at_price</td></tr>
+  <tr><td port="product_variantfulfillment_service">fulfillment_service</td></tr>
+  <tr><td port="product_variantgrams">grams</td></tr>
+  <tr><td port="product_variantimage_id">image_id</td></tr>
+  <tr><td port="product_variantinventory_item_id">inventory_item_id</td></tr>
+  <tr><td port="product_variantinventory_management">inventory_management</td></tr>
+  <tr><td port="product_variantinventory_policy">inventory_policy</td></tr>
+  <tr><td port="product_variantinventory_quantity">inventory_quantity</td></tr>
+  <tr><td port="product_variantold_inventory_quantity">old_inventory_quantity</td></tr>
+  <tr><td port="product_variantposition">position</td></tr>
+  <tr><td port="product_variantprice">price</td></tr>
+  <tr><td port="product_variantproduct_id">product_id</td></tr>
+  <tr><td port="product_variantrequires_shipping">requires_shipping</td></tr>
+  <tr><td port="product_variantsku">sku</td></tr>
+  <tr><td port="product_varianttaxable">taxable</td></tr>
+  <tr><td port="product_varianttitle">title</td></tr>
+  <tr><td port="product_variantweight">weight</td></tr>
+  <tr><td port="product_variantweight_unit">weight_unit</td></tr>
+</table>>];
+
+
+
+product_tag  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>product_tag</i></td></tr>
+  <tr><td port="product_tagindex">index</td></tr>
+  <tr><td port="product_tagproduct_id">product_id</td></tr>
+  <tr><td port="product_tagvalue">value</td></tr>
+</table>>];
+
+
+
+collection  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>collection</i></td></tr>
+  <tr><td port="collectionid">id</td></tr>
+  <tr><td port="collection_fivetran_deleted">_fivetran_deleted</td></tr>
+  <tr><td port="collectionhandle">handle</td></tr>
+  <tr><td port="collectionpublished_scope">published_scope</td></tr>
+  <tr><td port="collectiontitle">title</td></tr>
+</table>>];
+
+
+
+order_tag  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>order_tag</i></td></tr>
+  <tr><td port="order_tagindex">index</td></tr>
+  <tr><td port="order_tagorder_id">order_id</td></tr>
+  <tr><td port="order_tagvalue">value</td></tr>
+</table>>];
+
+
+
+customer  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>customer</i></td></tr>
+  <tr><td port="customerid">id</td></tr>
+  <tr><td port="customeraccepts_marketing">accepts_marketing</td></tr>
+  <tr><td port="customerdefault_address_id">default_address_id</td></tr>
+  <tr><td port="customeremail">email</td></tr>
+  <tr><td port="customerfirst_name">first_name</td></tr>
+  <tr><td port="customerlast_name">last_name</td></tr>
+  <tr><td port="customerorders_count">orders_count</td></tr>
+  <tr><td port="customernew_vs_repeat">new_vs_repeat</td></tr>
+  <tr><td port="customerphone">phone</td></tr>
+  <tr><td port="customerstate">state</td></tr>
+  <tr><td port="customertax_exempt">tax_exempt</td></tr>
+  <tr><td port="customertotal_spent">total_spent</td></tr>
+  <tr><td port="customerverified_email">verified_email</td></tr>
+</table>>];
+
+
+
+collect  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>collect</i></td></tr>
+  <tr><td port="collectid">id</td></tr>
+  <tr><td port="collectcollection_id">collection_id</td></tr>
+  <tr><td port="collectfeatured">featured</td></tr>
+  <tr><td port="collectposition">position</td></tr>
+  <tr><td port="collectproduct_id">product_id</td></tr>
+</table>>];
+
+
+
+order  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>order</i></td></tr>
+  <tr><td port="orderid">id</td></tr>
+  <tr><td port="orderbilling_address_address_1">billing_address_address_1</td></tr>
+  <tr><td port="orderbilling_address_address_2">billing_address_address_2</td></tr>
+  <tr><td port="orderbilling_address_city">billing_address_city</td></tr>
+  <tr><td port="orderbilling_address_company">billing_address_company</td></tr>
+  <tr><td port="orderbilling_address_country">billing_address_country</td></tr>
+  <tr><td port="orderbilling_address_country_code">billing_address_country_code</td></tr>
+  <tr><td port="orderbilling_address_first_name">billing_address_first_name</td></tr>
+  <tr><td port="orderbilling_address_last_name">billing_address_last_name</td></tr>
+  <tr><td port="orderbilling_address_latitude">billing_address_latitude</td></tr>
+  <tr><td port="orderbilling_address_longitude">billing_address_longitude</td></tr>
+  <tr><td port="orderbilling_address_name">billing_address_name</td></tr>
+  <tr><td port="orderbilling_address_phone">billing_address_phone</td></tr>
+  <tr><td port="orderbilling_address_province">billing_address_province</td></tr>
+  <tr><td port="orderbilling_address_province_code">billing_address_province_code</td></tr>
+  <tr><td port="orderbilling_address_zip">billing_address_zip</td></tr>
+  <tr><td port="orderbrowser_ip">browser_ip</td></tr>
+  <tr><td port="orderbuyer_accepts_marketing">buyer_accepts_marketing</td></tr>
+  <tr><td port="ordercancel_reason">cancel_reason</td></tr>
+  <tr><td port="ordercart_token">cart_token</td></tr>
+  <tr><td port="ordercheckout_token">checkout_token</td></tr>
+  <tr><td port="ordercurrency">currency</td></tr>
+  <tr><td port="ordercustomer_id">customer_id</td></tr>
+  <tr><td port="orderemail">email</td></tr>
+  <tr><td port="orderfinancial_status">financial_status</td></tr>
+  <tr><td port="orderfulfillment_status">fulfillment_status</td></tr>
+  <tr><td port="orderlanding_site_base_url">landing_site_base_url</td></tr>
+  <tr><td port="orderlocation_id">location_id</td></tr>
+  <tr><td port="ordername">name</td></tr>
+  <tr><td port="ordernote">note</td></tr>
+  <tr><td port="ordernumber">number</td></tr>
+  <tr><td port="orderorder_number">order_number</td></tr>
+  <tr><td port="orderprocessing_method">processing_method</td></tr>
+  <tr><td port="orderreferring_site">referring_site</td></tr>
+  <tr><td port="ordershipping_address_address_1">shipping_address_address_1</td></tr>
+  <tr><td port="ordershipping_address_address_2">shipping_address_address_2</td></tr>
+  <tr><td port="ordershipping_address_city">shipping_address_city</td></tr>
+  <tr><td port="ordershipping_address_company">shipping_address_company</td></tr>
+  <tr><td port="ordershipping_address_country">shipping_address_country</td></tr>
+  <tr><td port="ordershipping_address_country_code">shipping_address_country_code</td></tr>
+  <tr><td port="ordershipping_address_first_name">shipping_address_first_name</td></tr>
+  <tr><td port="ordershipping_address_last_name">shipping_address_last_name</td></tr>
+  <tr><td port="ordershipping_address_latitude">shipping_address_latitude</td></tr>
+  <tr><td port="ordershipping_address_longitude">shipping_address_longitude</td></tr>
+  <tr><td port="ordershipping_location">shipping_location</td></tr>
+  <tr><td port="ordershipping_address_name">shipping_address_name</td></tr>
+  <tr><td port="ordershipping_address_phone">shipping_address_phone</td></tr>
+  <tr><td port="ordershipping_address_province">shipping_address_province</td></tr>
+  <tr><td port="ordershipping_address_province_code">shipping_address_province_code</td></tr>
+  <tr><td port="ordershipping_address_zip">shipping_address_zip</td></tr>
+  <tr><td port="ordersource_name">source_name</td></tr>
+  <tr><td port="ordersubtotal_price">subtotal_price</td></tr>
+  <tr><td port="ordertaxes_included">taxes_included</td></tr>
+  <tr><td port="ordertoken">token</td></tr>
+  <tr><td port="ordertotal_discounts">total_discounts</td></tr>
+  <tr><td port="ordertotal_line_items_price">total_line_items_price</td></tr>
+  <tr><td port="ordertotal_price">total_price</td></tr>
+  <tr><td port="ordertotal_tax">total_tax</td></tr>
+  <tr><td port="ordertotal_weight">total_weight</td></tr>
+  <tr><td port="orderuser_id">user_id</td></tr>
+</table>>];
+
+
+
+product  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>product</i></td></tr>
+  <tr><td port="productid">id</td></tr>
+  <tr><td port="product_fivetran_deleted">_fivetran_deleted</td></tr>
+  <tr><td port="producthandle">handle</td></tr>
+  <tr><td port="productproduct_type">product_type</td></tr>
+  <tr><td port="productpublished_scope">published_scope</td></tr>
+  <tr><td port="producttitle">title</td></tr>
+  <tr><td port="productvendor">vendor</td></tr>
+</table>>];
+
+
+
+product_option  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>product_option</i></td></tr>
+  <tr><td port="product_optionid">id</td></tr>
+  <tr><td port="product_optionname">name</td></tr>
+  <tr><td port="product_optionposition">position</td></tr>
+  <tr><td port="product_optionproduct_id">product_id</td></tr>
+  <tr><td port="product_optionvalues">values</td></tr>
+</table>>];
+
+
+
+fivetran_audit  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>fivetran_audit</i></td></tr>
+  <tr><td port="fivetran_auditid">id</td></tr>
+  <tr><td port="fivetran_auditmessage">message</td></tr>
+  <tr><td port="fivetran_auditrows_updated_or_inserted">rows_updated_or_inserted</td></tr>
+  <tr><td port="fivetran_auditschema">schema</td></tr>
+  <tr><td port="fivetran_auditstatus">status</td></tr>
+  <tr><td port="fivetran_audittable">table</td></tr>
+  <tr><td port="fivetran_auditupdate_id">update_id</td></tr>
+</table>>];
+
+
+
+customer_address  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>customer_address</i></td></tr>
+  <tr><td port="customer_addressid">id</td></tr>
+  <tr><td port="customer_addressaddress_1">address_1</td></tr>
+  <tr><td port="customer_addressaddress_2">address_2</td></tr>
+  <tr><td port="customer_addresscity">city</td></tr>
+  <tr><td port="customer_addresscompany">company</td></tr>
+  <tr><td port="customer_addresscountry">country</td></tr>
+  <tr><td port="customer_addresscountry_code">country_code</td></tr>
+  <tr><td port="customer_addresscustomer_id">customer_id</td></tr>
+  <tr><td port="customer_addressfirst_name">first_name</td></tr>
+  <tr><td port="customer_addresslast_name">last_name</td></tr>
+  <tr><td port="customer_addresslatitude">latitude</td></tr>
+  <tr><td port="customer_addresslongitude">longitude</td></tr>
+  <tr><td port="customer_addressname">name</td></tr>
+  <tr><td port="customer_addressphone">phone</td></tr>
+  <tr><td port="customer_addressprovince">province</td></tr>
+  <tr><td port="customer_addressprovince_code">province_code</td></tr>
+  <tr><td port="customer_addresszip">zip</td></tr>
+</table>>];
+
+
+
+location  [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>location</i></td></tr>
+  <tr><td port="locationid">id</td></tr>
+  <tr><td port="locationactive">active</td></tr>
+  <tr><td port="locationaddress_1">address_1</td></tr>
+  <tr><td port="locationaddress_2">address_2</td></tr>
+  <tr><td port="locationcity">city</td></tr>
+  <tr><td port="locationcountry">country</td></tr>
+  <tr><td port="locationlegacy">legacy</td></tr>
+  <tr><td port="locationname">name</td></tr>
+  <tr><td port="locationphone">phone</td></tr>
+  <tr><td port="locationprovince">province</td></tr>
+  <tr><td port="locationzip">zip</td></tr>
+</table>>];
+
+order_line:order_lineorder_id -> order:orderid
+order_tag:order_tagorder_id -> order:orderid
+location:locationid -> order:orderlocation_id
+product:productid -> order_line:order_lineproduct_id
+collect:collectproduct_id -> product:productid
+collection:collectionid -> collect:collectcollection_id
+product_option:product_optionproduct_id -> product:productid
+product_tag:product_tagproduct_id -> product:productid
+product_variant:product_variantid -> order_line:order_linevariant_id
+customer:customerid -> order:ordercustomer_id
+customer_address:customer_addresscustomer_id -> customer:customerid
+customer_tag:customer_tagcustomer_id -> customer:customerid
+}
