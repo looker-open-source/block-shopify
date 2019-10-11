@@ -3,7 +3,7 @@
   "category_label": "Tools",
   "branding": {
     "image_uri": "https://www.stickpng.com/assets/images/58482ec0cef1014c0b5e4a70.png",
-    "tagline": "This Block provides a comprehensive overview of all order, customer, and product data for your Shopify store. It can be used to set up alerts for quarterly reports or KPI tracking."
+    "tagline": "Shopify is a comprehensive e-commerce platform that allows its customers to sell, present content and build their brands. This Block provides a real-time, interactive analytics suite for all your Shopify data."
   },
 
   "constants": {
@@ -27,8 +27,8 @@
   "auxiliary_projects": [
     {
       "git_uri": "git://github.com/looker/block-shopify-config.git",
-      "git_ref": "[INSERT HASH]",
-      "label": "Shopify Overview",
+      "git_ref": "717b9ebdb4bc8adacbea015b51e43a64d45b86b7",
+      "label": "Shopify Config",
       "constant_name": "CONFIG_PROJECT_NAME"
     }
   ]
