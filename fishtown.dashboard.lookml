@@ -1,5 +1,6 @@
 - dashboard: sales_summary
   title: Shopify Fishtown
+  hidden: yes
   layout: grid
   width: 800
   rows:

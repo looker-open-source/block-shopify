@@ -126,6 +126,12 @@ view: customer_core {
     drill_fields: [detail*]
   }
 
+  measure: sum_total_spent {
+    type: sum
+    sql: ${total_spent} ;;
+    drill_fields: [detail*]
+  }
+
   measure: avg_order_value {
     type: average
     sql: ${total_spent} ;;
