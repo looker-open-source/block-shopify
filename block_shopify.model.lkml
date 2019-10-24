@@ -1,6 +1,6 @@
 connection: "@{CONNECTION_NAME}"
 
-include: "views/*.view.lkml"
+include: "*.view.lkml"
 # include: "explores/*.explore.lkml"
 include: "*.dashboard.lookml"
 include: "//@{CONFIG_PROJECT_NAME}/*.view.lkml"
