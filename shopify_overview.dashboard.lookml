@@ -1,5 +1,5 @@
 - dashboard: shopify_overview
-  title: Shopify Overview
+  title: Store Overview
   layout: newspaper
   elements:
   - title: Total Orders This Month

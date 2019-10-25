@@ -1,5 +1,5 @@
 - dashboard: shopify_product
-  title: Shopify Product
+  title: Product Trends
   layout: newspaper
   elements:
   - title: Orders by Top 15 Product Tags

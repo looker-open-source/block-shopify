@@ -1,5 +1,5 @@
 - dashboard: shopify_customer
-  title: Customer Overview
+  title: Customer Analysis
   layout: newspaper
   elements:
   - title: New vs Repeat Customer Count Over Time
