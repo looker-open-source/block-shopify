@@ -5,7 +5,7 @@ view: collect {
 }
 
 view: collect_core {
-  sql_table_name: shopify_for_looker.collect ;;
+  sql_table_name: @{CONNECTION_NAME}.collect ;;
   drill_fields: [id]
   extension: required
 
