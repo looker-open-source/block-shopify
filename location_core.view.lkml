@@ -5,7 +5,7 @@ view: location {
 }
 
 view: location_core {
-  sql_table_name: shopify_for_looker.location ;;
+  sql_table_name: @{CONNECTION_NAME}.location ;;
   drill_fields: [id]
 
   dimension: id {
