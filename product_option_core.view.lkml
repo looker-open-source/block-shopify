@@ -5,7 +5,7 @@ view: product_option {
 }
 
 view: product_option_core {
-  sql_table_name: shopify_for_looker.product_option ;;
+  sql_table_name: @{CONNECTION_NAME}.product_option ;;
   drill_fields: [id]
 
   dimension: id {
