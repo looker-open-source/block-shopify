@@ -5,7 +5,7 @@ view: customer_tag {
 }
 
 view: customer_tag_core {
-  sql_table_name: shopify_for_looker.customer_tag ;;
+  sql_table_name: @{CONNECTION_NAME}.customer_tag ;;
 
   dimension_group: _fivetran_synced {
     type: time
