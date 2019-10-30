@@ -6,7 +6,7 @@ view: order {
 
 view: order_core {
   extension: required
-  sql_table_name: shopify_for_looker.`order` ;;
+  sql_table_name: @{CONNECTION_NAME}.`order` ;;
   drill_fields: [id]
 
   dimension: id {
