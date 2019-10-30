@@ -5,7 +5,7 @@ view: order_line {
 }
 
 view: order_line_core {
-  sql_table_name: shopify_for_looker.order_line ;;
+  sql_table_name: @{CONNECTION_NAME}.order_line ;;
   drill_fields: [id]
 
   dimension: id {
