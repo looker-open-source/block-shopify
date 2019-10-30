@@ -5,7 +5,7 @@ view: product {
 }
 
 view: product_core {
-  sql_table_name: shopify_for_looker.product ;;
+  sql_table_name: @{CONNECTION_NAME}.product ;;
   drill_fields: [id]
 
   dimension: id {
