@@ -5,7 +5,7 @@ view: customer {
 }
 
 view: customer_core {
-  sql_table_name: @{CONNECTION_NAME}.customer ;;
+  sql_table_name: @{SCHEMA_NAME}.customer ;;
   drill_fields: [id]
 
   dimension: id {

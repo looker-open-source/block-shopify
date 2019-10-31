@@ -5,7 +5,7 @@ view: location {
 }
 
 view: location_core {
-  sql_table_name: @{CONNECTION_NAME}.location ;;
+  sql_table_name: @{SCHEMA_NAME}.location ;;
   drill_fields: [id]
 
   dimension: id {

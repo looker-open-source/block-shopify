@@ -5,7 +5,7 @@ view: order_tag {
 }
 
 view: order_tag_core {
-  sql_table_name: @{CONNECTION_NAME}.order_tag ;;
+  sql_table_name: @{SCHEMA_NAME}.order_tag ;;
 
   dimension_group: _fivetran_synced {
     type: time

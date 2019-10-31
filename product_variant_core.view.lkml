@@ -5,7 +5,7 @@ view: product_variant {
 }
 
 view: product_variant_core {
-  sql_table_name: @{CONNECTION_NAME}.product_variant ;;
+  sql_table_name: @{SCHEMA_NAME}.product_variant ;;
   drill_fields: [id]
 
   dimension: id {

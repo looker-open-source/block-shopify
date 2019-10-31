@@ -5,7 +5,7 @@ view: fivetran_audit {
 }
 
 view: fivetran_audit_core {
-  sql_table_name: @{CONNECTION_NAME}.fivetran_audit ;;
+  sql_table_name: @{SCHEMA_NAME}.fivetran_audit ;;
   drill_fields: [id]
 
   dimension: id {

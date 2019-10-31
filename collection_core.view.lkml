@@ -5,7 +5,7 @@ view: collection {
 }
 
 view: collection_core {
-  sql_table_name: @{CONNECTION_NAME}.collection ;;
+  sql_table_name: @{SCHEMA_NAME}.collection ;;
   drill_fields: [id]
 
   dimension: id {

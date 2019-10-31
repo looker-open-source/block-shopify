@@ -5,7 +5,7 @@ view: collect {
 }
 
 view: collect_core {
-  sql_table_name: @{CONNECTION_NAME}.collect ;;
+  sql_table_name: @{SCHEMA_NAME}.collect ;;
   drill_fields: [id]
   extension: required
 
