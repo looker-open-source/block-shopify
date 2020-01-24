@@ -27,7 +27,7 @@
   "auxiliary_projects": [
     {
       "git_uri": "git://github.com/looker/block-shopify-config.git",
-      "git_ref": "717b9ebdb4bc8adacbea015b51e43a64d45b86b7",
+      "git_ref": "e71ab9352dd348d66f4fa96a61f50315b1e99700",
       "label": "Shopify Config",
       "constant_name": "CONFIG_PROJECT_NAME"
     }
