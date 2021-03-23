@@ -1,6 +1,7 @@
 - dashboard: shopify_product
   title: Product Trends
   layout: newspaper
+  preferred_viewer: dashboards-next
   elements:
   - title: Orders by Top 15 Product Tags
     name: Orders by Top 15 Product Tags
