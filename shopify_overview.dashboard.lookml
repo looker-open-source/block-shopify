@@ -1,6 +1,7 @@
 - dashboard: shopify_overview
   title: Store Overview
   layout: newspaper
+  preferred_viewer: dashboards-next
   elements:
   - title: Total Orders This Month
     name: Total Orders This Month
