@@ -1,0 +1,35 @@
+{
+  "label": "Shopify",
+  "category_label": "Models",
+  "branding": {
+    "image_uri": "https://marketplace-api.looker.com/block-icons/shopify.png",
+    "tagline": "Shopify is a comprehensive e-commerce platform that allows its customers to sell, present content and build their brands. This Block provides a real-time, interactive analytics suite for all your Shopify data."
+  },
+
+  "constants": {
+    "CONNECTION_NAME": {
+      "label": "Connection Name",
+      "value_constraint": "connection"
+    },
+    "SCHEMA_NAME": {
+      "label": "Schema Name"
+    },
+    "CONFIG_PROJECT_NAME": {
+      "label": "Config Project Name"
+    }
+  },
+  "models": [
+    {
+      "name": "block_shopify",
+      "connection_constant": "CONNECTION_NAME"
+    }
+  ],
+  "auxiliary_projects": [
+    {
+      "git_uri": "git://github.com/looker/block-shopify-config.git",
+      "git_ref": "afcacf14731d3d78cf3c8e0081a7e6cc0044e6d4",
+      "label": "Shopify Config",
+      "constant_name": "CONFIG_PROJECT_NAME"
+    }
+  ]
+}
