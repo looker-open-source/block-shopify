@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/product_variant.view"
-
 view: product_variant {
-  extends: [product_variant_config]
-}
-
-view: product_variant_core {
   sql_table_name: @{SCHEMA_NAME}.product_variant ;;
   drill_fields: [id]
 

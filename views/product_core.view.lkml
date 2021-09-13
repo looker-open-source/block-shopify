@@ -1,11 +1,5 @@
-include: "//@{CONFIG_PROJECT_NAME}/collection.view"
-
-view: collection {
-  extends: [collection_config]
-}
-
-view: collection_core {
-  sql_table_name: @{SCHEMA_NAME}.collection ;;
+view: product {
+  sql_table_name: @{SCHEMA_NAME}.product ;;
   drill_fields: [id]
 
   dimension: id {
@@ -34,9 +28,28 @@ view: collection_core {
     hidden: yes
   }
 
+  dimension_group: created {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.created_at ;;
+  }
+
   dimension: handle {
     type: string
     sql: ${TABLE}.handle ;;
+  }
+
+  dimension: product_type {
+    type: string
+    sql: ${TABLE}.product_type ;;
   }
 
   dimension_group: published {
@@ -77,8 +90,25 @@ view: collection_core {
     sql: ${TABLE}.updated_at ;;
   }
 
+  dimension: vendor {
+    type: string
+    sql: ${TABLE}.vendor ;;
+  }
+
   measure: count {
     type: count
-    drill_fields: [id]
+    drill_fields: [detail*]
+  }
+
+  # ----- Sets of fields for drilling ------
+  set: detail {
+    fields: [
+      id,
+      product_option.count,
+      product_variant.count,
+      order_line.count,
+      product_tag.count,
+      collect.count
+    ]
   }
 }

@@ -5,7 +5,7 @@
   elements:
   - title: Orders by Top 15 Product Tags
     name: Orders by Top 15 Product Tags
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_area
     fields: [order_line.count, product_tag.value, order.created_date]
@@ -69,7 +69,7 @@
     height: 12
   - title: Product Type Breakdown
     name: Product Type Breakdown
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_pie
     fields: [order_line.total_lifetime_revenue, top_15.product_tag]
@@ -158,7 +158,7 @@
     height: 6
   - title: Top Products by Units Sold
     name: Top Products by Units Sold
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_bar
     fields: [order_line.count_items, product.title]
@@ -221,7 +221,7 @@
     height: 6
   - title: Top Products by Revenue
     name: Top Products by Revenue
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_bar
     fields: [order_line.total_lifetime_revenue, product.title]
@@ -281,7 +281,7 @@
     height: 6
   - title: Collection Breakdown
     name: Collection Breakdown
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_pie
     fields: [order_line.total_lifetime_revenue, collection.title]
@@ -370,7 +370,7 @@
     height: 6
   - title: Revenue by Month and Collection
     name: Revenue by Month and Collection
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_area
     fields: [order.total_revenue, order.created_month, collection.title]

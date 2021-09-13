@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/order_tag.view"
-
 view: order_tag {
-  extends: [order_tag_config]
-}
-
-view: order_tag_core {
   sql_table_name: @{SCHEMA_NAME}.order_tag ;;
 
   dimension_group: _fivetran_synced {

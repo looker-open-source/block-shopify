@@ -1,13 +1,6 @@
-include: "//@{CONFIG_PROJECT_NAME}/collect.view.lkml"
-
 view: collect {
-  extends: [collect_config]
-}
-
-view: collect_core {
   sql_table_name: @{SCHEMA_NAME}.collect ;;
   drill_fields: [id]
-  extension: required
 
   dimension: id {
     primary_key: yes

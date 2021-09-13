@@ -3,27 +3,12 @@ project_name: "block-shopify"
 ################# Constants #################
 
 constant: CONNECTION_NAME {
-  value: "looker_app"
-  export: override_required
+  value: "4mile_bigquery"
+  # value: "looker_app"
+  export: override_optional
 }
 
 constant: SCHEMA_NAME {
   value: "shopify_for_looker"
-  export: override_required
-}
-
-constant: CONFIG_PROJECT_NAME {
-  value: "block-shopify-config"
-  export: override_required
-}
-
-################ Dependencies ################
-
-local_dependency: {
-  project: "@{CONFIG_PROJECT_NAME}"
-
-  override_constant: SCHEMA_NAME {
-    value: "@{SCHEMA_NAME}"
-  }
-
+  export: override_optional
 }
