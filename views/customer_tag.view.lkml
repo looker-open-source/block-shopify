@@ -1,11 +1,5 @@
-include: "//@{CONFIG_PROJECT_NAME}/product_tag.view"
-
-view: product_tag {
-  extends: [product_tag_config]
-}
-
-view: product_tag_core {
-  sql_table_name: @{SCHEMA_NAME}.product_tag ;;
+view: customer_tag {
+  sql_table_name: @{SCHEMA_NAME}.customer_tag ;;
 
   dimension_group: _fivetran_synced {
     type: time
@@ -22,15 +16,15 @@ view: product_tag_core {
     hidden: yes
   }
 
+  dimension: customer_id {
+    type: number
+    # hidden: yes
+    sql: ${TABLE}.customer_id ;;
+  }
+
   dimension: index {
     type: number
     sql: ${TABLE}.index ;;
-  }
-
-  dimension: product_id {
-    type: number
-    # hidden: yes
-    sql: ${TABLE}.product_id ;;
   }
 
   dimension: value {
@@ -40,6 +34,6 @@ view: product_tag_core {
 
   measure: count {
     type: count
-    drill_fields: [product.id]
+    drill_fields: [customer.last_name, customer.id, customer.first_name]
   }
 }

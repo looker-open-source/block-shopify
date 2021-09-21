@@ -13,23 +13,12 @@
     },
     "SCHEMA_NAME": {
       "label": "Schema Name"
-    },
-    "CONFIG_PROJECT_NAME": {
-      "label": "Config Project Name"
     }
   },
   "models": [
     {
-      "name": "block_shopify",
+      "name": "block_shopify_v2",
       "connection_constant": "CONNECTION_NAME"
-    }
-  ],
-  "auxiliary_projects": [
-    {
-      "git_uri": "git://github.com/looker/block-shopify-config.git",
-      "git_ref": "afcacf14731d3d78cf3c8e0081a7e6cc0044e6d4",
-      "label": "Shopify Config",
-      "constant_name": "CONFIG_PROJECT_NAME"
     }
   ]
 }

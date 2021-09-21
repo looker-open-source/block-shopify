@@ -5,7 +5,7 @@
   elements:
   - title: New vs Repeat Customer Count Over Time
     name: New vs Repeat Customer Count Over Time
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_line
     fields: [order.count, order.created_month, customer.new_vs_repeat]
@@ -60,7 +60,7 @@
     height: 10
   - title: Total Customers This Month
     name: Total Customers This Month
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: single_value
     fields: [order.created_month, customer.count]
@@ -111,7 +111,7 @@
     height: 5
   - title: New vs Repeat Customers
     name: New vs Repeat Customers
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_pie
     fields: [customer.new_vs_repeat, customer.count]
@@ -163,7 +163,7 @@
     height: 5
   - title: Top 10 Countries by Revenue
     name: Top 10 Countries by Revenue
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_bar
     fields: [order_line.total_lifetime_revenue, customer_address.country]
@@ -231,7 +231,7 @@
     height: 5
   - title: Avg Customer Value
     name: Avg Customer Value
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: single_value
     fields: [order.created_month, order.total_revenue, customer.count]
@@ -284,7 +284,7 @@
     height: 5
   - title: User Spend by Location
     name: User Spend by Location
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_map
     fields: [order.shipping_location, order.total_revenue]
@@ -322,7 +322,7 @@
     height: 10
   - title: Revenue by Customer Cohort
     name: Revenue by Customer Cohort
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_line
     fields: [customer.created_month, order.created_month, order.total_revenue]
@@ -413,7 +413,7 @@
     height: 9
   - title: Repeat Customer Breakdown
     name: Repeat Customer Breakdown
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_column
     fields: [customer.order_count, customer.count]
@@ -485,7 +485,7 @@
     height: 2
   - title: Order Count by Customer Age
     name: Order Count by Customer Age
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_area
     fields: [order.customer_age, order.count, order.created_month]

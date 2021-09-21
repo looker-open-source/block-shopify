@@ -1,11 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/order.view.lkml"
-
 view: order {
-  extends: [order_config]
-}
-
-view: order_core {
-  extension: required
   sql_table_name: @{SCHEMA_NAME}.order ;;
   drill_fields: [id]
 

@@ -5,7 +5,7 @@
   elements:
   - title: Total Orders This Month
     name: Total Orders This Month
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: single_value
     fields: [order.created_month, order.count]
@@ -60,7 +60,7 @@
     height: 4
   - title: Total Revenue
     name: Total Revenue
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: single_value
     fields: [order.created_month, order.total_revenue]
@@ -111,7 +111,7 @@
     height: 4
   - title: Avg Items per Order
     name: Avg Items per Order
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: single_value
     fields: [order.created_month, order_line.count_items, order.count]
@@ -164,7 +164,7 @@
     height: 4
   - title: Avg Order Value
     name: Avg Order Value
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: single_value
     fields: [order.created_month, order.avg_order_value]
@@ -216,7 +216,7 @@
     height: 4
   - title: Sales & Orders Over Time
     name: Sales & Orders Over Time
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_line
     fields: [order.created_month, order.total_revenue, order.count]
@@ -284,7 +284,7 @@
     height: 8
   - title: Avg Order Value Over Time
     name: Avg Order Value Over Time
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_area
     fields: [order.created_month, order.total_revenue, order.count]
@@ -342,7 +342,7 @@
     height: 4
   - title: Avg Items per Order over Time
     name: Avg Items per Order over Time
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_area
     fields: [order.created_month, order_line.avg_items_per_order]
@@ -416,7 +416,7 @@
     height: 4
   - title: Paid and Fulfilled Orders
     name: Paid and Fulfilled Orders
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_column
     fields: [order.financial_status, order.fulfillment_status, order.count, order.created_date]
@@ -473,7 +473,7 @@
     height: 11
   - title: Revenue and Order Volume by Vendor
     name: Revenue and Order Volume by Vendor
-    model: block_shopify
+    model: block_shopify_v2
     explore: order
     type: looker_column
     fields: [product.vendor, order_line.total_lifetime_revenue, order_line.count_items]

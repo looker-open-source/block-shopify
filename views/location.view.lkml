@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/location.view"
-
 view: location {
-  extends: [location_config]
-}
-
-view: location_core {
   sql_table_name: @{SCHEMA_NAME}.location ;;
   drill_fields: [id]
 
