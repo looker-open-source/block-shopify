@@ -1,3 +1,5 @@
+This is not an officially supported Google product. This project is not eligible for the [Google Open Source Software Vulnerability Rewards Program](https://bughunters.google.com/open-source-security).
+
 ### What does this Block do for me?
 
 **(1) Replicate Existing Shopify Reports** - easily replicate your existing Shopify reports to gain a comprehensive view of your customers and their purchase patterns.
